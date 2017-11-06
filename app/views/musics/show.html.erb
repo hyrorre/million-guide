@@ -1,0 +1,112 @@
+<h2><%= @music.title %></h2>
+<h2></h2>
+<canvas id="cv" width="600" height="1800"></canvas>
+<script>
+  (function() {
+    let max_section = 5;
+    let resolution = 192;
+    function Note(lane, section, index, pulse){
+      this.lane = lane;
+      this.section = section;
+      this.index = index;
+      this.pulse = pulse;
+    }
+    let notes = [];
+    function ChannelToLane(channel){
+      return (Math.floor(channel / 10) - 1) * 6 + (channel % 10) - 1;
+    }
+    let lines = gon.score_str.split("\n");
+    for(let line of lines){
+      if(7 < line.length && line[0] == "#" && line[6] == ":"){
+        if(line[line.length - 1] == "\r"){
+          line.pop();
+        }
+        let section = Number(line.substr(1, 3));
+        let channel = Number(line.substr(4, 2));
+        let lane = ChannelToLane(channel);
+        let objstr = line.substr(7);
+        for(let i = 0; i < objstr.length; i += 2){
+          let index = Number(objstr.substr(i, 2));
+          if(index != 0){
+            let pulse = resolution * (section + i / objstr.length);
+            notes.push(new Note(lane, section, index, pulse));
+          }
+        }
+      }
+    }
+    notes.sort(
+      function(a, b){
+        if(a.pulse < b.pulse) return -1;
+        if(a.pulse > b.pulse) return 1;
+        return 0;
+      }
+    );
+    max_section = notes[notes.length - 1].section + 1;
+
+    // Canvas APIが利用できるかを判定（1）
+    if (HTMLCanvasElement) {
+      console.log("描画開始");
+      // コンテキストオブジェクトを取得（2）
+      let cv = document.querySelector('#cv');
+      let c = cv.getContext('2d');
+      let w = cv.width;
+      let h = cv.height;
+      let center = {
+        x: w / 2,
+        y: h / 2
+      };
+      let small_r = 15;
+      let large_r = 20;
+
+      let div_x = 50;
+      let div_y = 50;
+      let section_num_w = 70;
+
+      var elem = document.getElementById('cv');
+      elem.setAttribute("height", div_y * 8 * max_section);
+
+      let box_x = 50;
+      for(let i = 0; i < max_section; ++i){
+        console.log("loop" + i.toString());
+        let box_y = (max_section - i - 1) * div_y * 8;
+
+        c.strokeRect(box_x, box_y, div_x * 7 + section_num_w, div_y * 8);
+        c.beginPath();
+        c.moveTo(box_x + div_x * 7, box_y);
+        c.lineTo(box_x + div_x * 7, box_y + div_y * 8);
+        c.stroke();
+        c.fillText(i.toString(), box_x + div_x * 7 + 20, box_y + div_y * 4);
+        for(let i = 1; i < 7; ++i){
+          c.beginPath();
+          c.moveTo(box_x + div_x * i, box_y);
+          c.lineTo(box_x + div_x * i, box_y + div_y * 8);
+          c.stroke();
+        }
+        for(let i = 1; i < 8; ++i){
+          c.beginPath();
+          c.moveTo(box_x, box_y + div_y * i);
+          c.lineTo(box_x + div_x * 7, box_y + div_y * i);
+          c.stroke();
+        }
+      }
+      let i = 0;
+      for(let note of notes){
+        console.log("note " + (++i).toString());
+        console.log("lane " + note.lane.toString());
+        console.log("pulse " + note.pulse.toString());
+        let x = box_x + (div_x * (note.lane + 1));
+        let y = div_y * 8 * (max_section - note.pulse / resolution);
+
+        c.beginPath();
+        if(note.index % 10 == 0){}
+        else if(note.index % 10 <= 5){
+          c.arc(x, y, small_r, 0, Math.PI * 2, false);
+          c.fill();
+        }
+        else if(note.index == 16 || note.index == 26){
+          
+        }
+      }
+    }
+  })();
+</script>
