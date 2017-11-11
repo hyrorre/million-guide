@@ -307,7 +307,7 @@ Music.create(
   level_mmp: 0,
 )
 Music.create(
-  idstr: "smile1",
+  idstr: "smileichi",
   title: "スマイルいちばん",
   kana: "すまいるいちばん",
   musictype: 0,
@@ -364,5 +364,20 @@ Music.create(
   level_4m: 7,
   level_6m: 11,
   level_mm: 16,
+  level_mmp: 0,
+)
+Music.create(
+  idstr: "happydarling",
+  title: "Happy Darling",
+  kana: "Happy Darling",
+  musictype: 2,
+  order: 3012,
+  added_on: Date.new(2017, 11, 10),
+  updated_on: Date.new(2017, 11, 10),
+  level_2m: 4,
+  level_2mp: 10,
+  level_4m: 7,
+  level_6m: 11,
+  level_mm: 17,
   level_mmp: 0,
 )
