@@ -1,27 +1,29 @@
-<h2>曲一覧</h2>
-<table border = "1">
-  <tr>
-    <th>タイトル</th>
-    <th>タイプ</th>
-    <th>2MIX </th>
-    <th>2MIX+</th>
-    <th>4MIX </th>
-    <th>6MIX </th>
-    <th>MMIX </th>
-    <th>楽曲追加日</th>
-  </tr>
-  <% @musics.each do |music| %>
+<div class="musics_index_container">
+  <h2>曲一覧</h2>
+  <table border = "1">
     <tr>
-      <th><%= music.title %></th>
-      <th><%= @musictype_str[music.musictype] %></th>
-      <% for i in 0..4 do %>
-        <% if !@bms_exist[music.idstr][i] %>
-          <th><%= @levels[music.idstr][i] %></th>
-        <% else %>
-          <th><%= link_to @levels[music.idstr][i], musics_show_path(music.idstr, i) %></th>
-        <% end %>
-      <% end %>
-      <th><%= music.added_on %></th>
+      <th>タイトル</th>
+      <th>タイプ</th>
+      <th>2MIX </th>
+      <th>2MIX+</th>
+      <th>4MIX </th>
+      <th>6MIX </th>
+      <th>MMIX </th>
+      <th>楽曲追加日</th>
     </tr>
-  <% end %>
-</table>
+    <% @musics.each do |music| %>
+      <tr>
+        <th><%= music.title %></th>
+        <th><%= @musictype_str[music.musictype] %></th>
+        <% for i in 0..4 do %>
+          <% if !@bms_exist[music.idstr][i] %>
+            <th><%= @levels[music.idstr][i] %></th>
+          <% else %>
+            <th><%= link_to @levels[music.idstr][i], musics_show_path(music.idstr, i) %></th>
+          <% end %>
+        <% end %>
+        <th><%= music.added_on %></th>
+      </tr>
+    <% end %>
+  </table>
+</div>
