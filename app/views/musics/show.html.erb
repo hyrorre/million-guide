@@ -1,6 +1,7 @@
 <h2><%= @music.title %></h2>
 <h2></h2>
-<canvas id="cv" width="600" height="1800"></canvas>
+<canvas id="cv0" width="600" height="1800"></canvas>
+<canvas id="cv1" width="600" height="1800"></canvas>
 <script>
   (function() {
     let max_section = 5;
@@ -11,6 +12,7 @@
       this.index = index;
       this.pulse = pulse;
     }
+    let extralarge_section = 0;
     let notes = [];
     function ChannelToLane(channel){
       return (Math.floor(channel / 10) - 1) * 6 + (channel % 10) - 1;
@@ -31,6 +33,10 @@
           if(index != 0){
             let pulse = resolution * (section + i / objstr.length);
             notes.push(new Note(lane, section, index, pulse));
+            if(index == 36){
+              extralarge_section = section + 1;
+              console.log("extralarge_section: " + extralarge_section.toString());
+            }
           }
         }
       }
@@ -48,14 +54,8 @@
     if (HTMLCanvasElement) {
       console.log("描画開始");
       // コンテキストオブジェクトを取得（2）
-      let cv = document.querySelector('#cv');
-      let c = cv.getContext('2d');
-      let w = cv.width;
-      let h = cv.height;
-      let center = {
-        x: w / 2,
-        y: h / 2
-      };
+      let cv = [document.querySelector('#cv0'), document.querySelector('#cv1')];
+      let context = [cv[0].getContext('2d'), cv[1].getContext('2d')];
       let arrow_r = 7;
       let small_r = 13;
       let large_r = 18;
@@ -67,21 +67,40 @@
       let div_y = 45;
       let section_num_w = 70;
 
-      var elem = document.getElementById('cv');
-      cv.height = div_y * 8 * max_section;
+      cv[1].height = div_y * 8 * extralarge_section;
+      cv[0].height = div_y * 8 * (max_section - extralarge_section);
+
+      function getContextY(pulse){
+        section_f = pulse / resolution;
+        if(section_f < extralarge_section){
+          return {
+            c: context[1],
+            y: div_y * 8 * (extralarge_section - pulse / resolution)
+          };
+        }
+        else{
+          return {
+            c: context[0],
+            y: div_y * 8 * (max_section - pulse / resolution)
+          };
+        }
+      }
 
       let box_x = 50;
-      c.strokeStyle = 'rgb(30, 30, 30)';
-      for(let i = 0; i < max_section; ++i){
-        //console.log("loop" + i.toString());
-        let box_y = (max_section - i - 1) * div_y * 8;
+      for(let i = 0; i < 2; ++i){
+        context[i].strokeStyle = 'rgb(30, 30, 30)';
+      }
+      for(let section = 0; section < max_section; ++section){
+        let context_y = getContextY(section * resolution);
+        let c = context_y.c;
+        let box_y = context_y.y - div_y * 8;
 
         c.strokeRect(box_x, box_y, div_x * 7 + section_num_w, div_y * 8);
         c.beginPath();
         c.moveTo(box_x + div_x * 7, box_y);
         c.lineTo(box_x + div_x * 7, box_y + div_y * 8);
         c.stroke();
-        c.fillText(i.toString(), box_x + div_x * 7 + 20, box_y + div_y * 4);
+        c.fillText(section.toString(), box_x + div_x * 7 + 20, box_y + div_y * 4);
         for(let i = 1; i < 7; ++i){
           c.beginPath();
           c.moveTo(box_x + div_x * i, box_y);
@@ -96,8 +115,10 @@
         }
       }
       let last_note = [null, null];
-      c.lineWidth = 18;
-      c.strokeStyle = c.fillStyle = 'rgb(240, 120, 120)';
+      for(let i = 0; i < 2; ++i){
+        context[i].lineWidth = 18;
+        context[i].strokeStyle = context[i].fillStyle = 'rgb(240, 120, 120)';
+      }
       for(let note of notes){
         // handle slide notes
         let slide_id = Math.floor(note.index / 10) - 1;
@@ -106,11 +127,13 @@
             last_note[slide_id] = note;
           }
           else{
+            let context_y = getContextY(note.pulse);
+            let c = context_y.c;
             let x = box_x + (div_x * (note.lane + 2) / 2);
-            let y = div_y * 8 * (max_section - note.pulse / resolution);
+            let y = context_y.y;
 
             let last_x = box_x + (div_x * (last_note[slide_id].lane + 2) / 2);
-            let last_y = div_y * 8 * (max_section - last_note[slide_id].pulse / resolution);
+            let last_y = getContextY(last_note[slide_id].pulse).y;
             last_note[slide_id] = (note.index % 10 == 7 ? note : null);
 
             c.beginPath();
@@ -119,16 +142,20 @@
             c.stroke();
             if(note.index % 10 == 7){
               c.beginPath();
-              c.arc(x, y, c.lineWidth / 2, 0, Math.PI * 2, false)
+              c.arc(x, y, c.lineWidth / 2, 0, Math.PI * 2, false);
               c.fill();
             }
           }
         }
       }
-      c.lineWidth = 2;
+      for(let i = 0; i < 2; ++i){
+        context[i].lineWidth = 2;
+      }
       for(let note of notes){
+        let context_y = getContextY(note.pulse);
+        let c = context_y.c;
         let x = box_x + (div_x * (note.lane + 2) / 2);
-        let y = div_y * 8 * (max_section - note.pulse / resolution);
+        let y = context_y.y;
 
         c.beginPath();
         if(note.index % 10 == 0){}
