@@ -12,3 +12,12 @@
   width: 280px;
   margin: 20px;
 }
+
+.floating_div {
+  bottom: 20px;
+  right: 20px;
+  position: fixed;
+  z-index: 1;
+  border: 1px solid #000000;
+  background-color: #FFFFFF;
+}

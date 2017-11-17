@@ -4,9 +4,16 @@
   <h2></h2>
   <canvas id="cv0" width="440" height="1800"></canvas>
   <canvas id="cv1" width="440" height="1800"></canvas>
+  <div class="floating_div">
+    <a href="#pagetop">PAGE TOP</a><br />
+    <a href="#pagebottom">PAGE BOTTOM</a>
+  </div>
 </div>
 <script>
-  (function() {
+  onload = function(){
+    load_draw();
+  };
+  function load_draw() {
     let max_section = 5;
     let resolution = 192;
     function Note(lane, section, index, pulse){
@@ -278,5 +285,5 @@
         }
       }
     }
-  })();
+  };
 </script>
