@@ -96,20 +96,23 @@
       }
 
       let box_x = 30;
-      for(let i = 0; i < 2; ++i){
-        context[i].strokeStyle = 'rgb(30, 30, 30)';
-      }
       for(let section = 0; section < max_section; ++section){
         let context_y = getContextY(section * resolution);
         let c = context_y.c;
+        c.font = "30px Arial"
         let box_y = context_y.y - div_y * 8;
 
+        c.lineWidth = 3;
+        c.strokeStyle = 'rgb(0, 0, 0)';
         c.strokeRect(box_x, box_y, div_x * 7 + section_num_w, div_y * 8);
         c.beginPath();
         c.moveTo(box_x + div_x * 7, box_y);
         c.lineTo(box_x + div_x * 7, box_y + div_y * 8);
         c.stroke();
         c.fillText(section.toString(), box_x + div_x * 7 + 20, box_y + div_y * 4);
+
+        c.lineWidth = 0.5;
+        c.strokeStyle = 'rgb(0, 0, 0)';
         for(let i = 1; i < 7; ++i){
           c.beginPath();
           c.moveTo(box_x + div_x * i, box_y);
@@ -118,6 +121,7 @@
         }
         for(let i = 1; i < 8; ++i){
           c.beginPath();
+          c.lineWidth = (i % 2 ? 0.5 : 1);
           c.moveTo(box_x, box_y + div_y * i);
           c.lineTo(box_x + div_x * 7, box_y + div_y * i);
           c.stroke();
