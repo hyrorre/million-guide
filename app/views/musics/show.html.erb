@@ -188,7 +188,7 @@
         c.font = "30px Arial"
         let box_y = context_y.y - div_y * 8;
 
-        c.lineWidth = 3;
+        c.lineWidth = 2;
         c.strokeStyle = 'rgb(0, 0, 0)';
         c.strokeRect(box_x, box_y, div_x * 7 + section_num_w, div_y * 8);
         c.beginPath();
@@ -213,27 +213,35 @@
           c.stroke();
         }
       }
-      let last_note = [null, null];
-      for(let i = 0; i < 2; ++i){
-        context[i].lineWidth = 18;
-        context[i].strokeStyle = context[i].fillStyle = 'rgb(240, 120, 120)';
-      }
+      let last_note = null;
+      let last_slide_notes = [null, null];
       for(let note of notes){
+        let context_y = getContextY(note.pulse);
+        let c = context_y.c;
+        let x = box_x + (div_x * (note.lane + 2) / 2);
+        let y = context_y.y;
+
+        if(last_note != null && note.pulse == last_note.pulse){
+          let last_x = box_x + (div_x * (last_note.lane + 2) / 2);
+          c.lineWidth = 5;
+          c.strokeStyle = 'rgb(30, 30, 30)';
+          c.beginPath();
+          c.moveTo(x, y);
+          c.lineTo(last_x, y);
+          c.stroke();
+        }
         // handle slide notes
         let slide_id = Math.floor(note.index / 10) - 1;
         if(slide_id == 0 || slide_id == 1){
-          if(last_note[slide_id] == null){
-            last_note[slide_id] = note;
+          if(last_slide_notes[slide_id] == null){
+            last_slide_notes[slide_id] = note;
           }
           else{
-            let context_y = getContextY(note.pulse);
-            let c = context_y.c;
-            let x = box_x + (div_x * (note.lane + 2) / 2);
-            let y = context_y.y;
-
-            let last_x = box_x + (div_x * (last_note[slide_id].lane + 2) / 2);
-            let last_y = getContextY(last_note[slide_id].pulse).y;
-            last_note[slide_id] = (note.index % 10 == 7 ? note : null);
+            c.lineWidth = 26;
+            c.strokeStyle = c.fillStyle = 'rgb(240, 120, 120)';
+            let last_x = box_x + (div_x * (last_slide_notes[slide_id].lane + 2) / 2);
+            let last_y = getContextY(last_slide_notes[slide_id].pulse).y;
+            last_slide_notes[slide_id] = (note.index % 10 == 7 ? note : null);
 
             c.beginPath();
             c.moveTo(last_x, last_y);
@@ -246,6 +254,7 @@
             }
           }
         }
+        last_note = note;
       }
       for(let note of notes){
         let context_y = getContextY(note.pulse);
