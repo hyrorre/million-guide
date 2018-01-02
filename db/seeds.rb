@@ -143,8 +143,8 @@ Music.create(
 )
 Music.create(
   idstr: "goodsleep",
-  title: "Good-Sleep，Baby♡",
-  kana: "Good-Sleep，Baby♡",
+  title: "Good-Sleep, Baby♡",
+  kana: "Good-Sleep, Baby♡",
   musictype: 2,
   order: 2006,
   added_on: Date.new(2017, 9, 8),
@@ -337,7 +337,7 @@ Music.create(
   level_mmp: 0,
 )
 Music.create(
-  idstr: "happylacky",
+  idstr: "happylucky",
   title: "ハッピー☆ラッキー☆ジェットマシーン",
   kana: "はっぴーらっきーじぇっとましーん",
   musictype: 0,
