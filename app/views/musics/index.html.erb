@@ -1,29 +1,81 @@
+<meta name="viewport" content="width=480">
 <div class="musics_index_container">
+  <h1>ミリシタ簡易譜面ビューア</h1>
+  <p>
+    PCなどでも動作しますが、スマホなどの縦画面端末推奨です<br>
+    Android版ChromeおよびiOS版Safari最新版にて動作確認済<br>
+    問題などがあれば作者のTwitter(<a href="https://twitter.com/hyrorre">@hyrorre</a>)まで
+  </p>
+  <h2></h2>
   <h2>曲一覧</h2>
-  <table border = "1">
-    <tr>
-      <th>タイトル</th>
-      <th>タイプ</th>
-      <th>2MIX </th>
-      <th>2MIX+</th>
-      <th>4MIX </th>
-      <th>6MIX </th>
-      <th>MMIX </th>
-      <th>楽曲追加日</th>
-    </tr>
-    <% @musics.each do |music| %>
-      <tr>
-        <th><%= music.title %></th>
-        <th><%= @musictype_str[music.musictype] %></th>
-        <% for i in 0..4 do %>
-          <% if !@bms_exist[music.idstr][i] %>
-            <th><%= @levels[music.idstr][i] %></th>
-          <% else %>
-            <th><%= link_to @levels[music.idstr][i], musics_show_path(music.idstr, i) %></th>
-          <% end %>
-        <% end %>
-        <th><%= music.added_on %></th>
-      </tr>
-    <% end %>
-  </table>
+  <div id="itemLists">
+    <details>
+      <summary>Search, Sort</summary>
+      <h5>Search</h5>
+      <input type="text" class="search" placeholder="検索"><br>
+
+      <h5>Sort</h5>
+      <button class="sort" data-sort="order">Default</button>
+      <button class="sort" data-sort="kana">Title</button>
+      <button class="sort" data-sort="musictype">Type</button>
+      <button class="sort" data-sort="diffnum0">2M</button>
+      <button class="sort" data-sort="diffnum1">2M+</button>
+      <button class="sort" data-sort="diffnum2">4M</button>
+      <button class="sort" data-sort="diffnum3">6M</button>
+      <button class="sort" data-sort="diffnum4">MM</button>
+      <button class="sort" data-sort="added_on">Date</button>
+
+      <h5>Other</h5>
+      <label><input id="date_sw" type="checkbox"> 楽曲追加日を表示</label>
+    </details>
+
+    <ul id="musiclist" class="list">
+      <% @musics.each do |music| %>
+        <li>
+          <%= image_tag("jackets/#{music.idstr}.jpg", :class => "jacket") %>
+          <%= image_tag("musictypes/#{music.musictype}.png", :class => "musictypeimage") %>
+          <h3 class="title"><%= music.title %></h3>
+          <table class="scoretable">
+            <tr>
+              <% for i in 0..4 do %>
+                <th><%= @difficulty_str[i] %></th>
+              <% end %>
+            </tr>
+            <tr>
+              <% for i in 0..4 do %>
+                <td class="diff<%= i %>"><%= link_to @levels[music.idstr][i], musics_show_path(music.idstr, i) %></td>
+                <p class="diffnum diffnum<%= i %>"><%= @levels[music.idstr][i] %></p>
+              <% end %>
+            </tr>
+          </table>
+          <p class="added_on"><%= music.added_on %></p>
+          <p class="kana"><%= music.kana %></p>
+          <p class="order"><%= music.order %></p>
+          <p class="musictype"><%= music.musictype %></p>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
+<script>
+  function show_hide_column(obj, i){
+    if (obj.is(':checked')) {
+      $('.col'+i).show();
+    }
+    else {
+      $('.col'+i).hide();
+    }
+  }
+  $(document).ready(function(){
+    var options = {
+      // 検索するターゲットデータ
+      valueNames: [ 'title', 'kana', 'order', 'musictype', 'diffnum0', 'diffnum1', 'diffnum2', 'diffnum3', 'diffnum4', 'added_on' ]
+    };
+    // ターゲットとなるID
+    var itemList = new List('itemLists', options);
+
+    $('#date_sw').change(function(){
+      $('.added_on').toggle();
+    })
+  });
+</script>

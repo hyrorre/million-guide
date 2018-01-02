@@ -4,7 +4,7 @@
 
 
 .musics_index_container {
-  width: 1000px;
+  width: 480px;
   margin: 20px auto;
 }
 
@@ -20,4 +20,95 @@
   z-index: 1;
   border: 1px solid #000000;
   background-color: #FFFFFF;
+}
+
+p {
+	margin-left: 20px;
+	font-size: 8px;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 10px;
+}
+img.jacket {
+	width: 75px;
+	height: 75px;
+	float: left;
+}
+
+img.musictypeimage {
+	padding: 2px 0px 0px 5px;
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+li {
+	padding: 10px 0px;
+}
+li + li {
+	border-top: 1px solid lightslategray;
+}
+
+li h3 {
+	margin-left: 110px;
+	margin-bottom: 3px;
+	margin-top: 0px;
+}
+
+li p.added_on {
+	text-align: right;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	display: none;
+}
+
+table.scoretable {
+	padding-left: 20px;
+	padding-top: 0px;
+	margin-top: 0px;
+  border-spacing: 10px 0;
+}
+
+table.scoretable a {
+	color: black;
+}
+
+table.scoretable th {
+	height: auto;
+	font-size: 8px;
+}
+table.scoretable td {
+	width: 40px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+table.scoretable td.diff0 {
+	background-color: greenyellow;
+}
+
+table.scoretable td.diff1 {
+	background-color: rgb(255, 104, 255);
+}
+
+table.scoretable td.diff2 {
+	background-color: aqua;
+}
+
+table.scoretable td.diff3 {
+	background-color: salmon;
+}
+
+table.scoretable td.diff4 {
+	background-color: violet;
+}
+
+.kana, .order, .musictype, .diffnum {
+	display: none;
+}
+
+h5 {
+	margin-bottom: 5px;
 }

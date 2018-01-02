@@ -1,7 +1,8 @@
 class MusicsController < ApplicationController
   def index
     @musics = Music.all.order(:order)
-    @musictype_str = ["Princess", "Fairy", "Angel", "All"]
+    @musictype_str = ["Pr", "Fa", "An", "All"]
+    @difficulty_str = ["2M", "2M+", "4M", "6M", "MM", "MM+"]
     @bms_exist = {}
     @levels = {}
     @musics.each do |music|
@@ -30,7 +31,8 @@ class MusicsController < ApplicationController
     @music = Music.find_by(idstr: params[:idstr])
     gon.format = 0 # 0 : bms, 1 : notes
     gon.score_str = ""
-    gon.difficulty = params[:difficulty]
+    @difficulty = gon.difficulty = params[:difficulty]
+    @difficulty_str = ["2M", "2M+", "4M", "6M", "MM", "MM+"]
     filepath = "#{Rails.root}/app/assets/scores/#{@music.idstr}#{params[:difficulty]}.bms"
     if !File.exist?(filepath)
       filepath = "#{Rails.root}/app/assets/scores/#{@music.idstr}#{params[:difficulty]}.notes"
