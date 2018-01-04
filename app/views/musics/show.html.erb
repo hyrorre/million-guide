@@ -1,17 +1,39 @@
 <meta name="viewport" content="width=480">
-<% provide(:title, @music.title + " " + @difficulty_str[@difficulty.to_i]) %>
+<% provide(:title, "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]") %>
 <div class="musics_show_container">
-  <h2><%= @music.title %></h2>
-  <h2></h2>
+  <%= link_to "TOPへ戻る", musics_index_path() %>
+  <h1>ミリシタ簡易譜面ビューア</h1>
+  <h2><%= "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %></h2>
+  <details>
+    <summary>Settings</summary>
+    <h5 class="inline">
+      Width
+      <select name="Width" id="width_select">
+        <% for i in 5..20 do %>
+          <option value="<%= i * 0.1 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+        <% end %>
+      </select>
+    </h5>
+    <h5>
+      Height
+      <select name="Width" id="height_select">
+        <% for i in 5..20 do %>
+          <option value="<%= i * 0.1 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+        <% end %>
+      </select>
+    </h5>
+    <p>仕様上、Heightを大きくしすぎると譜面の一部が消えます。適度な値で調整してください。</p>
+  </details>
   <canvas id="cv0" width="440" height="1800"></canvas>
   <canvas id="cv1" width="440" height="1800"></canvas>
-  <div class="floating_div">
-    <a href="#pagetop">PAGE TOP</a><br />
-    <a href="#pagebottom">PAGE BOTTOM</a>
-  </div>
 </div>
 <script>
-  $(document).ready(load_draw);
+  $(document).ready(function(){
+    $('select').change(function(){
+      load_draw();
+    });
+    load_draw();
+  });
   function load_draw() {
     let max_section = 5;
     let resolution = 192;
@@ -158,13 +180,16 @@
 
       let sqrt2 = Math.sqrt(2);
 
-      let div_x = 45;
-      let div_y = 45;
+      let box_x = 30;
+      let div_x = 45 * $('#width_select').val();
+      let div_y = 45 * $('#height_select').val();
       let section_num_w = 70;
 
       cv[1].height = div_y * 8 * extralarge_section;
       cv[0].height = div_y * 8 * (max_section - extralarge_section);
-
+      for(let c of cv){
+        c.width = box_x + div_x * 7 + section_num_w + 50;
+      }
       function getContextY(pulse){
         section_f = pulse / resolution;
         if(section_f < extralarge_section){
@@ -181,7 +206,6 @@
         }
       }
 
-      let box_x = 30;
       for(let section = 0; section < max_section; ++section){
         let context_y = getContextY(section * resolution);
         let c = context_y.c;
