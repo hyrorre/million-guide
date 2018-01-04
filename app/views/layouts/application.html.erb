@@ -8,22 +8,22 @@
     
     <!-- スムーズスクロール部分の記述 -->
     <script>
-    $(function(){
-       // #で始まるアンカーをクリックした場合に処理
-       $('a[href^=#]').click(function() {
-          // スクロールの速度
-          var speed = 400; // ミリ秒
-          // アンカーの値取得
-          var href= $(this).attr("href");
-          // 移動先を取得
-          var target = $(href == "#" || href == "" ? 'html' : href);
-          // 移動先を数値で取得
-          var position = target.offset().top;
-          // スムーススクロール
-          $('body,html').animate({scrollTop:position}, speed, 'swing');
-          return false;
-       });
-    });
+      $(document).on('turbolinks:load', function(){
+        // #で始まるアンカーをクリックした場合に処理
+        $('a[href^="#"]').click(function() {
+            // スクロールの速度
+            var speed = 400; // ミリ秒
+            // アンカーの値取得
+            var href= $(this).attr("href");
+            // 移動先を取得
+            var target = $(href == "#" || href == "" ? 'html' : href);
+            // 移動先を数値で取得
+            var position = target.offset().top;
+            // スムーススクロール
+            $('body,html').animate({scrollTop:position}, speed, 'swing');
+            return false;
+        });
+      });
     </script>
 
     <%= csrf_meta_tags %>
@@ -37,6 +37,10 @@
   <body>
     <div id="pagetop"></div>
     <%= yield %>
+    <div class="floating_div">
+      <a href="#pagetop">PAGE TOP</a><br>
+      <a href="#pagebottom">PAGE BOTTOM</a>
+    </div>
     <div id="pagebottom"></div>
   </body>
 </html>
