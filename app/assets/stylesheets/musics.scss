@@ -5,12 +5,12 @@
 
 .musics_index_container {
   width: 480px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .musics_show_container {
   width: 480px;
-  margin: 20px auto;
+  margin: 0px auto;
 }
 
 .floating_div {
@@ -20,6 +20,25 @@
   z-index: 1;
   border: 1px solid #000000;
   background-color: #FFFFFF;
+  padding: 5px;
+}
+
+.floating_div i {
+	font-size: 25px;
+}
+
+h1 {
+	padding-left: 10px;
+	border-left: 15px solid black;
+	border-bottom: 2px solid black;
+	background-color: gainsboro;
+}
+
+h2 {
+	padding-left: 10px;
+	border-left: 10px solid black;
+	border-bottom: 2px solid black;
+	background-color: gainsboro;
 }
 
 p {
@@ -127,4 +146,8 @@ details p {
 
 .hidden {
 	display: none;
+}
+
+#pagebottom {
+	margin-bottom: 80px;
 }

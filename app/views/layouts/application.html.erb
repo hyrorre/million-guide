@@ -2,9 +2,11 @@
 <html>
   <head>
     <title><%= full_title(yield(:title)) %></title>
-    
+    <meta name=”description” content="アイドルマスター ミリオンライブ！ シアターデイズ(ミリシタ)の音ゲー譜面を見やすく表示します。譜面確認にどうぞ。">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
     <!-- スムーズスクロール部分の記述 -->
     <script>
@@ -38,8 +40,8 @@
     <div id="pagetop"></div>
     <%= yield %>
     <div class="floating_div">
-      <a href="#pagetop">PAGE TOP</a><br>
-      <a href="#pagebottom">PAGE BOTTOM</a>
+      <a href="#pagetop"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a><br>
+      <a href="#pagebottom"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
     </div>
     <div id="pagebottom"></div>
   </body>

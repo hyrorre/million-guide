@@ -1,8 +1,8 @@
 <meta name="viewport" content="width=480">
 <% provide(:title, "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]") %>
 <div class="musics_show_container">
-  <%= link_to "TOPへ戻る", musics_index_path() %>
-  <h1>ミリシタ簡易譜面ビューア</h1>
+  <h1>ミリシタ譜面ビューア</h1>
+  <p><%= link_to "Home", musics_index_path() %> > <%= "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %></p>
   <h2><%= "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %></h2>
   <details>
     <summary>Settings</summary>
