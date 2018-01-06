@@ -95,7 +95,18 @@
         }
       }
       else if(type == 3 || type == 4){
-        index = 1;
+        if(direction == 1){
+          index = 4;
+        }
+        else if(direction == 2){
+          index = 3;
+        }
+        else if(direction == 3){
+          index = 5;
+        }
+        else {
+          index = 1;
+        }
         if(baseindex == 0){
           if(slide_range[0][1] < pulse){
             baseindex = 10;
@@ -163,13 +174,24 @@
           extralarge_section = section + 1;
           console.log("extralarge_section: " + extralarge_section.toString());
         }
-        else if(sourcenote.FollowingNotes != null) for(let fnote of sourcenote.FollowingNotes){
-          let fpulse = fnote.Ticks - section_offset * resolution;
-          let fsection = Math.floor(pulse / resolution) - section_offset;
-          let slide_id = Math.floor(index / 10) - 1;
-          let findex = TypeSizeDirectionToIndex(fnote.Type, fnote.Size, fnote.FlickDirection, slide_id, fpulse);
-          let flane = EndXToLane(fnote.EndX, gon.difficulty, findex);
-          notes.push(new Note(flane, fsection, findex, fpulse));
+        else if(sourcenote.FollowingNotes != null){
+          let len = sourcenote.FollowingNotes.length;
+          let i = 0;
+          for(let fnote of sourcenote.FollowingNotes){
+            let fpulse = fnote.Ticks - section_offset * resolution;
+            let fsection = Math.floor(fpulse / resolution);
+            let slide_id = Math.floor(index / 10) - 1;
+            let findex = 0;
+            if(i == len - 1){
+              findex = TypeSizeDirectionToIndex(fnote.Type, fnote.Size, fnote.FlickDirection, slide_id, fpulse);
+            }
+            else{
+              findex = (slide_id + 1) * 10 + 7;
+            }
+            let flane = EndXToLane(fnote.EndX, gon.difficulty, findex);
+            notes.push(new Note(flane, fsection, findex, fpulse));
+            i++;
+          }
         }
       }
     }
@@ -262,7 +284,7 @@
         let x = box_x + (div_x * (note.lane + 2) / 2);
         let y = context_y.y;
 
-        if(last_note != null && note.pulse == last_note.pulse){
+        if(last_note != null && note.pulse == last_note.pulse && note.index % 10 != 7 && last_note.index % 10 != 7){
           let last_x = box_x + (div_x * (last_note.lane + 2) / 2);
           c.lineWidth = 5;
           c.strokeStyle = 'rgb(30, 30, 30)';
