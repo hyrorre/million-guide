@@ -10,15 +10,15 @@
       Width
       <select name="Width" id="width_select">
         <% for i in 5..20 do %>
-          <option value="<%= i * 0.1 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+          <option value="<%= i * 10 %>" class="opval<%= i * 10 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
         <% end %>
       </select>
     </h5>
     <h5>
       Height
-      <select name="Width" id="height_select">
+      <select name="Height" id="height_select">
         <% for i in 5..20 do %>
-          <option value="<%= i * 0.1 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+          <option value="<%= i * 10 %>" class="opval<%= i * 10 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
         <% end %>
       </select>
     </h5>
@@ -29,11 +29,28 @@
 </div>
 <script>
   $(document).ready(function(){
+    load_cookie();
     $('select').change(function(){
       load_draw();
+      save_cookie();
     });
     load_draw();
   });
+  function save_cookie(){
+    for(let select of [$('#width_select'), $('#height_select')]){
+      Cookies.set(select.attr('id'), select.val(), { expires : 365 });
+    };
+  }
+  function load_cookie(){
+    for(let select of [$('#width_select'), $('#height_select')]){
+      let id = select.attr('id');
+      let val = Cookies.get(id);
+      if(val != undefined){
+        select.children().prop("selected", false);
+        $("#" + id + " .opval" + val).prop("selected", true);
+      }
+    };
+  }
   function load_draw() {
     let max_section = 5;
     let resolution = 192;
@@ -181,8 +198,8 @@
       let sqrt2 = Math.sqrt(2);
 
       let box_x = 30;
-      let div_x = 45 * $('#width_select').val();
-      let div_y = 45 * $('#height_select').val();
+      let div_x = 45 * $('#width_select').val() / 100;
+      let div_y = 45 * $('#height_select').val() / 100;
       let section_num_w = 70;
 
       cv[1].height = div_y * 8 * extralarge_section;
