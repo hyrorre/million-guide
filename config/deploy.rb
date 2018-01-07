@@ -2,13 +2,13 @@
 lock "~> 3.10.1"
 
 set :application, "MillionGuide"
-set :repo_url, "https://HY_RORRE@bitbucket.org/HY_RORRE/millionguide.git"
+set :repo_url, "git@bitbucket.org:HY_RORRE/millionguide.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
+# set :deploy_to, "/home/deploy/www/MillionGuide"
 
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
@@ -26,6 +26,11 @@ set :repo_url, "https://HY_RORRE@bitbucket.org/HY_RORRE/millionguide.git"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+
+# シンボリックリンクをはるフォルダ。(※後述)
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
@@ -39,7 +44,37 @@ set :repo_url, "https://HY_RORRE@bitbucket.org/HY_RORRE/millionguide.git"
 # set :ssh_options, verify_host_key: :secure
 
 
+# rubyのバージョン
+set :rbenv_ruby, '2.1.3'
+
 namespace :deploy do
+  desc 'Restart application'
+  task :restart do
+    invoke 'unicorn:restart'
+  end
+
+  desc 'Create database'
+  task :db_create do
+    on roles(:db) do |host|
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:create'
+        end
+      end
+    end
+  end
+
+  desc 'Run seed'
+  task :seed do
+    on roles(:app) do
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:seed'
+        end
+      end
+    end
+  end
+
   desc "Make sure local git is in sync with remote."
   task :confirm do
     on roles(:app) do
@@ -61,4 +96,11 @@ namespace :deploy do
   end
 
   before :starting, :confirm
+
+  after :publishing, :restart
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    end
+  end
 end
