@@ -20,13 +20,13 @@ test:
   <<: *default
   database: db/test.sqlite3
 
-  production:
-    <<: *default
-    adapter: mysql2
-    database: MillionGuideDB
-    username: <%= ENV['DB_USERNAME'] %>
-    password: <%= ENV['DB_PASSWORD'] %>
-    # socket: /var/lib/mysql/mysql.sock #自分の環境に合わせて変更
-    host: millionguidedb.cdpwzrckukyb.ap-northeast-1.rds.amazonaws.com #自分の環境に合わせて変更
-    database: MillionGuideDB #自分の環境に合わせて変更
-    encoding: utf8
+production:
+  <<: *default
+  adapter: mysql2
+  database: MillionGuideDB
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  # socket: /var/lib/mysql/mysql.sock #自分の環境に合わせて変更
+  host: millionguidedb.cdpwzrckukyb.ap-northeast-1.rds.amazonaws.com #自分の環境に合わせて変更
+  database: MillionGuideDB #自分の環境に合わせて変更
+  encoding: utf8
