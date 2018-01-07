@@ -22,6 +22,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # processes).
 #
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
+workers 1
 
 # Use the `preload_app!` method when specifying a `workers` number.
 # This directive tells Puma to first boot the application and load code
@@ -30,7 +31,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # you need to make sure to reconnect any threads in the `on_worker_boot`
 # block.
 #
-# preload_app!
+preload_app!
 
 # If you are preloading your application and using Active Record, it's
 # recommended that you close any connections to the database before workers
@@ -47,18 +48,65 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # or connections that may have been created at application boot, as Ruby
 # cannot share connections between processes.
 #
-# on_worker_boot do
-#   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
-# end
-#
+on_worker_boot do
+  ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
+end
+
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
 daemonize false
 
-app_dir = File.expand_path("../..", __FILE__)
+app_dir = "/var/www/MillionGuide/current"
 bind "unix://#{app_dir}/tmp/sockets/puma.sock"
 pidfile "#{app_dir}/tmp/pids/puma.pid"
 state_path "#{app_dir}/tmp/pids/puma.state"
 stdout_redirect "#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
+activate_control_app
+
+#lib/capistrano/tasks/puma.rake
+task :smart_restart do
+    if !puma_preload_app? && puma_workers.to_i > 1
+      invoke 'puma:phased-restart'
+    else
+      invoke 'puma:restart'
+    end
+end
+
+# launcher.rb
+def prune_bundler
+	return unless defined?(Bundler)
+	puma = Bundler.rubygems.loaded_specs("puma")
+	dirs = puma.require_paths.map { |x| File.join(puma.full_gem_path, x) }
+	puma_lib_dir = dirs.detect { |x| File.exist? File.join(x, '../bin/puma-wild') }
+
+	unless puma_lib_dir
+	  log "! Unable to prune Bundler environment, continuing"
+	  return
+	end
+
+	deps = puma.runtime_dependencies.map do |d|
+	  spec = Bundler.rubygems.loaded_specs(d.name)
+	  "#{d.name}:#{spec.version.to_s}"
+	end
+
+	log '* Pruning Bundler environment'
+	home = ENV['GEM_HOME']
+	Bundler.with_clean_env do
+	  ENV['GEM_HOME'] = home
+	  ENV['PUMA_BUNDLER_PRUNED'] = '1'
+	  wild = File.expand_path(File.join(puma_lib_dir, "../bin/puma-wild"))
+	  args = [Gem.ruby, wild, '-I', dirs.join(':'), deps.join(',')] + @original_argv
+	  Kernel.exec(*args)
+	end
+end
+
+# launcher.rb
+def prune_bundler?
+	@options[:prune_bundler] && clustered? && !@options[:preload_app]
+end
+
+  def clustered?
+	(@options[:workers] || 0) > 0
+end
