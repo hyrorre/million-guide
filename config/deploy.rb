@@ -26,7 +26,7 @@ set :repo_url, "git@bitbucket.org:HY_RORRE/millionguide.git"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml', "config/puma.rb")
 
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -95,9 +95,10 @@ namespace :deploy do
   #after :publishing, :restart
   desc 'Restart application'
   task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      Rake::Task["puma:restart"].reenable <-コレを追記
-      invoke 'puma:restart'
+    on roles(:app) do
+      # Your restart mechanism here, for example:
+      # execute :touch, release_path.join('tmp/restart.txt')
+      invoke 'puma:phased-restart'
     end
   end
 
@@ -106,3 +107,8 @@ namespace :deploy do
     end
   end
 end
+
+set :puma_default_hooks, false
+set :puma_conf, "#{shared_path}/config/puma.rb"
+set :puma_preload_app, false
+set :prune_bundler, true
