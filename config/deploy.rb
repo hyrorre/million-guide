@@ -109,6 +109,6 @@ namespace :deploy do
 end
 
 set :puma_default_hooks, false
-set :puma_conf, "#{Rails.root.to_s}/config/puma.rb"
+set :puma_conf, "/var/www/MillionGuide/current/config/puma.rb"
 set :puma_preload_app, false
 set :prune_bundler, true
