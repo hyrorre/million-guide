@@ -22,10 +22,9 @@ test:
 
 production:
   <<: *default
-  # adapter: mysql2
-  # database: MillionGuideDB
-  # username: <%= ENV['DB_USERNAME'] %>
-  # password: <%= ENV['DB_PASSWORD'] %>
-  # database: MillionGuideDB #自分の環境に合わせて変更
-  # encoding: utf8
-  database: db/production.sqlite3
+  adapter: mysql2
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  database: MillionGuideDB #自分の環境に合わせて変更
+  encoding: utf8
+  host: localhost
