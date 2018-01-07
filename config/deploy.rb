@@ -90,7 +90,7 @@ namespace :deploy do
     end
   end
 
-  before :starting, :confirm
+  #before :starting, :confirm
 
   #after :publishing, :restart
   desc 'Restart application'
