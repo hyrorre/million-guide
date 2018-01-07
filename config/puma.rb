@@ -55,6 +55,7 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
+daemonize true
 
 app_dir = File.expand_path("../..", __FILE__)
 bind "unix://#{app_dir}/tmp/sockets/puma.sock"

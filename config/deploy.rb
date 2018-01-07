@@ -45,7 +45,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 
 # rubyのバージョン
-set :rbenv_ruby, '2.1.3'
+set :rbenv_ruby, '2.4.2'
 
 namespace :deploy do
   desc 'Create database'
@@ -92,7 +92,14 @@ namespace :deploy do
 
   before :starting, :confirm
 
-  after :publishing, :restart
+  #after :publishing, :restart
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      Rake::Task["puma:restart"].reenable <-コレを追記
+      invoke 'puma:restart'
+    end
+  end
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

@@ -28,6 +28,7 @@ gem 'jquery-turbolinks'
 group :development do
   gem 'capistrano'
   gem 'capistrano-rails'
+  gem 'capistrano-rails-console'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
   gem 'capistrano-rbenv-vars'
