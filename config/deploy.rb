@@ -106,12 +106,6 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
-
-  before :restart, :precompile
-  desc 'Precompile assets'
-  task :precompile do
-    invoke 'assets:precompile'
-  end
 end
 
 set :puma_default_hooks, false
