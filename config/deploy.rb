@@ -115,3 +115,4 @@ set :prune_bundler, true
 set :puma_threads,    [4, 16]
 set :puma_workers,    1
 
+set :puma_init_active_record, true

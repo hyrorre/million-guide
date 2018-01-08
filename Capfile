@@ -35,6 +35,7 @@ require "capistrano/rails/assets"
 # require "capistrano/passenger"
 
 require 'capistrano/rbenv'
+require 'capistrano/rbenv_vars'
 require "capistrano/bundler"
 # require "capistrano/rails/migrations"
 
