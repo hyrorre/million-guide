@@ -98,7 +98,7 @@ namespace :deploy do
     on roles(:app) do
       # Your restart mechanism here, for example:
       # execute :touch, release_path.join('tmp/restart.txt')
-      invoke 'puma:phased-restart'
+      #invoke 'puma:phased-restart'
     end
   end
 

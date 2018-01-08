@@ -21,7 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
 
 gem 'gon'
-gem 'dotenv-rails'
 
 gem 'jquery-turbolinks'
 
@@ -32,7 +31,6 @@ group :development do
   gem 'capistrano-rails-console'
   gem 'capistrano3-puma'
   gem 'capistrano-rbenv'
-  gem 'capistrano-rbenv-vars'
   gem 'capistrano-bundler'
 end
 
