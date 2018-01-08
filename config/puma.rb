@@ -1,3 +1,8 @@
+
+
+# EDIT PUMA SETTING IN DEPLOY.RB
+
+
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.
 # Any libraries that use thread pools should be configured to match
@@ -56,11 +61,11 @@ end
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 
-daemonize false
+# daemonize false
 
-shared_dir = File.expand_path("../..", __FILE__)
-bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
-pidfile "#{shared_dir}/tmp/pids/puma.pid"
-state_path "#{shared_dir}/tmp/pids/puma.state"
-stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
-activate_control_app
+# shared_dir = File.expand_path("../..", __FILE__)
+# bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
+# pidfile "#{shared_dir}/tmp/pids/puma.pid"
+# state_path "#{shared_dir}/tmp/pids/puma.state"
+# stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
+# activate_control_app

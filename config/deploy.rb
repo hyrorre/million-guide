@@ -111,3 +111,7 @@ end
 set :puma_default_hooks, false
 set :puma_preload_app, false
 set :prune_bundler, true
+
+set :puma_threads,    [4, 16]
+set :puma_workers,    1
+
