@@ -24,3 +24,4 @@
 
 # Enviroment var
 .rbenv_vars
+.env
