@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20171101104000) do
     t.integer "level_mmp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["idstr"], name: "index_musics_on_idstr", unique: true
   end
 
 end

@@ -17,5 +17,6 @@ class CreateMusics < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :musics, :idstr, :unique=>true
   end
 end

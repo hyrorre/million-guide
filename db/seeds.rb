@@ -202,6 +202,21 @@ Music.create(
   level_mmp: 0,
 )
 Music.create(
+  idstr: "anpara",
+  title: "Angelic Parade♪",
+  kana: "Angelic Parade",
+  musictype: 2,
+  order: 3012,
+  added_on: Date.new(2017, 11, 21),
+  updated_on: Date.new(2017, 11, 21),
+  level_2m: 4,
+  level_2mp: 9,
+  level_4m: 8,
+  level_6m: 11,
+  level_mm: 17,
+  level_mmp: 0,
+)
+Music.create(
   idstr: "sutekise",
   title: "素敵なキセキ",
   kana: "すてきなきせき",

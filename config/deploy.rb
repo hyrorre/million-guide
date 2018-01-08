@@ -59,6 +59,7 @@ namespace :deploy do
     end
   end
 
+  after :publishing, :seed
   desc 'Run seed'
   task :seed do
     on roles(:app) do
@@ -106,6 +107,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
+
 end
 
 set :puma_default_hooks, false
