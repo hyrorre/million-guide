@@ -58,9 +58,9 @@ plugin :tmp_restart
 
 daemonize false
 
-app_dir = "/var/www/MillionGuide/current"
-bind "unix://#{app_dir}/tmp/sockets/puma.sock"
-pidfile "#{app_dir}/tmp/pids/puma.pid"
-state_path "#{app_dir}/tmp/pids/puma.state"
-stdout_redirect "#{app_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
+shared_dir = File.expand_path("../..", __FILE__)
+bind "unix://#{shared_dir}/tmp/sockets/puma.sock"
+pidfile "#{shared_dir}/tmp/pids/puma.pid"
+state_path "#{shared_dir}/tmp/pids/puma.state"
+stdout_redirect "#{shared_dir}/log/puma.stdout.log", "#{app_dir}/log/puma.stderr.log", true
 activate_control_app
