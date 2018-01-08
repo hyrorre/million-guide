@@ -60,4 +60,4 @@ ssh_options: {
   # password: "please use keys"
 }
 
-set :puma_conf, "/var/www/MillionGuide/current/config/puma.rb"
+#set :puma_conf, "/var/www/MillionGuide/current/config/puma.rb"
