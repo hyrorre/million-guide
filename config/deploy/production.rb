@@ -50,12 +50,14 @@
 # The server-based syntax can be used to override options:
 # ------------------------------------
 server "13.230.153.154",
-  user: "deploy",
-  roles: %w{web db app},
-  ssh_options: {
-    user: "deploy", # overrides user setting above
-    keys: %w(~/.ssh/id_rsa),
-    forward_agent: true,
-    # auth_methods: %w(publickey password)
-    # password: "please use keys"
-  }
+user: "deploy",
+roles: %w{web db app},
+ssh_options: {
+  user: "deploy", # overrides user setting above
+  keys: %w(~/.ssh/id_rsa),
+  forward_agent: true,
+  # auth_methods: %w(publickey password)
+  # password: "please use keys"
+}
+
+set :puma_conf, "#{shared_path}/config/puma.rb"
