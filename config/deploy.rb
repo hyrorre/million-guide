@@ -59,7 +59,18 @@ namespace :deploy do
     end
   end
 
-  after :publishing, :seed
+  after :publishing, :migrate
+  after :migrate, :seed
+  desc 'Run migrate'
+  task :migrate do
+    on roles(:app) do
+      with rails_env: fetch(:rails_env) do
+        within current_path do
+          execute :bundle, :exec, :rake, 'db:migrate'
+        end
+      end
+    end
+  end
   desc 'Run seed'
   task :seed do
     on roles(:app) do
