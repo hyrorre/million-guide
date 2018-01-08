@@ -206,7 +206,7 @@ Music.create(
   title: "Angelic Parade♪",
   kana: "Angelic Parade",
   musictype: 2,
-  order: 3012,
+  order: 2010,
   added_on: Date.new(2017, 11, 21),
   updated_on: Date.new(2017, 11, 21),
   level_2m: 4,
