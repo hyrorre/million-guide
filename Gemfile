@@ -21,6 +21,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'therubyracer', platforms: :ruby
 
 gem 'gon'
+gem 'devise'
+gem 'activeadmin'
 
 gem 'jquery-turbolinks'
 
