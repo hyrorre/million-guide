@@ -43,7 +43,9 @@
             </tr>
             <tr>
               <% for i in 0..4 do %>
-                <td class="diff<%= i %>"><%= link_to @levels[music.idstr][i], musics_show_path(music.idstr, i) %></td>
+                <td class="diff<%= i %> bms_exist_<%= @bms_exist[music.idstr][i] %>">
+                  <%= link_to @levels[music.idstr][i], musics_show_path(music.idstr, i) %>
+                </td>
                 <p class="diffnum diffnum<%= i %>"><%= @levels[music.idstr][i] %></p>
               <% end %>
             </tr>
