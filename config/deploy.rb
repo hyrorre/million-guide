@@ -26,7 +26,7 @@ set :repo_url, "git@bitbucket.org:HY_RORRE/millionguide.git"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 
-set :linked_files, fetch(:linked_files, []).push('config/settings.yml')
+set :linked_files, fetch(:linked_files, []).push('config/settings.yml', 'config/puma.rb')
 
 # シンボリックリンクをはるフォルダ。(※後述)
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
@@ -92,7 +92,7 @@ namespace :deploy do
 
   #before :starting, :confirm
 
-  #after :publishing, :restart
+  after :publishing, :restart
   desc 'Restart application'
   task :restart do
     on roles(:app) do
@@ -106,9 +106,15 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
+
+  before :restart, :precompile
+  desc 'Precompile assets'
+  task :precompile do
+    invoke 'assets:precompile'
+  end
 end
 
 set :puma_default_hooks, false
-# set :puma_conf, "config/puma.rb"
+set :puma_conf, "#{shared_path}/config/puma.rb"
 set :puma_preload_app, false
 set :prune_bundler, true
