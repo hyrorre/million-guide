@@ -72,6 +72,7 @@ li {
 }
 li + li, li > li {
 	border-top: 1px solid lightslategray;
+	min-height: 85px;
 }
 
 li > li {
@@ -84,6 +85,16 @@ li h3 {
 	padding-left: 90px;
 	margin-bottom: 5px;
 	margin-top: 1px;
+}
+
+.nend_action_button {
+	font-size: 9px;
+	background-color: forestgreen;
+	color: white;
+	padding: 2px;
+	float: right;
+	margin: 10px 10px 0px 10px;
+	text-align: center;
 }
 
 li p.added_on {
