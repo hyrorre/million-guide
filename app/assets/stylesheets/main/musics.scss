@@ -69,10 +69,11 @@ img.musictypeimage {
 }
 li {
 	padding: 10px 0px 0px 0px;
+	margin-top: 0px;
 }
 li + li, li > li {
 	border-top: 1px solid lightslategray;
-	min-height: 85px;
+	min-height: 75px;
 }
 
 li > li {
