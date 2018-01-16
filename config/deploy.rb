@@ -119,7 +119,7 @@ namespace :deploy do
     end
   end
 
-  after 'deploy:restart', 'deploy:sitemap:create'
+  after 'deploy:restart', 'sitemap:refresh'
 
 end
 
