@@ -15,7 +15,7 @@ module ApplicationHelper
 		],
 		og: {
 			site_name: 'ミリシタ譜面ビューア',
-			title: '',
+			title: '楽曲一覧',
 			description: 'アイドルマスター ミリオンライブ！シアターデイズ(ミリシタ)の音ゲー譜面を見やすく表示します。譜面確認にどうぞ。',
 			type: 'website',
 			url: request.original_url,
