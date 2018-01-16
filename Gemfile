@@ -23,6 +23,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'gon'
 gem 'devise'
 gem 'activeadmin'
+gem 'meta-tags'
 
 gem 'jquery-turbolinks'
 

@@ -1,11 +1,32 @@
 # app/helpers/application_helper.rb
 module ApplicationHelper
-	def full_title(page_title)
-	  base_title = "ミリシタ簡易譜面ビューア" # 自分のアプリ名を設定する
-	  if page_title.empty?
-		base_title
-	  else
-		"#{page_title} | #{base_title}"
-	  end
-	end
+	def default_meta_tags
+	{
+		site: 'ミリシタ譜面ビューア',
+		title: '',
+		reverse: true,
+		charset: 'utf-8',
+		description: 'アイドルマスター ミリオンライブ！シアターデイズ(ミリシタ)の音ゲー譜面を見やすく表示します。譜面確認にどうぞ。',
+		keywords: 'ミリシタ,譜面確認,アイドルマスター,ミリオンライブ',
+		canonical: request.original_url,
+		separator: '|',
+		icon: [
+			{ href: image_url('musictypes/3.png') },
+		],
+		og: {
+			site_name: 'ミリシタ譜面ビューア',
+			title: '',
+			description: 'アイドルマスター ミリオンライブ！シアターデイズ(ミリシタ)の音ゲー譜面を見やすく表示します。譜面確認にどうぞ。',
+			type: 'website',
+			url: request.original_url,
+			image: image_url('musictypes/3.png'),
+			locale: 'ja_JP',
+		},
+		twitter: {
+			card: 'summary',
+			site: '@MillionScore',
+			creator: '@hyrorre',
+		}
+	}
   end
+end

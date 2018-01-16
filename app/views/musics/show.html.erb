@@ -1,9 +1,10 @@
 <meta name="viewport" content="width=480">
-<% provide(:title, "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]") %>
+<% title_diff = "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %>
+<% set_meta_tags title: title_diff, og: { title: title_diff, image: image_url("jackets/#{@music.idstr}.jpg") } %>
 <div class="musics_show_container">
   <h1>ミリシタ譜面ビューア</h1>
-  <p><%= link_to "Home", musics_index_path() %> > <%= "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %></p>
-  <h2><%= "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %></h2>
+  <p><%= link_to "Home", musics_index_path() %> > <%= title_diff %></p>
+  <h2><%= title_diff %></h2>
   <details>
     <summary>Settings</summary>
     <h5 class="inline">
