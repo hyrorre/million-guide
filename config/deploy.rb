@@ -119,6 +119,8 @@ namespace :deploy do
     end
   end
 
+  after 'deploy:restart', 'deploy:sitemap:create'
+
 end
 
 set :puma_default_hooks, false
