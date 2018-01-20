@@ -277,6 +277,21 @@ Music.create(
   level_mmp: 0,
 )
 Music.create(
+  idstr: "kuraki",
+  title: "昏き星、遠い月",
+  kana: "くらきほしとおいつき",
+  musictype: 1,
+  order: 2014,
+  added_on: Date.new(2018, 1, 19),
+  updated_on: Date.new(2018, 1, 19),
+  level_2m: 4,
+  level_2mp: 10,
+  level_4m: 7,
+  level_6m: 11,
+  level_mm: 17,
+  level_mmp: 0,
+)
+Music.create(
   idstr: "sutekise",
   title: "素敵なキセキ",
   kana: "すてきなきせき",
