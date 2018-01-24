@@ -64,17 +64,3 @@
     </ul>
   </div>
 </div>
-<script>
-  $(document).ready(function(){
-    var options = {
-      // 検索するターゲットデータ
-      valueNames: [ 'title', 'kana', 'order', 'musictype', 'diffnum0', 'diffnum1', 'diffnum2', 'diffnum3', 'diffnum4', 'added_on' ]
-    };
-    // ターゲットとなるID
-    var itemList = new List('itemLists', options);
-
-    $('#date_sw').change(function(){
-      $('.added_on').toggle();
-    })
-  });
-</script>

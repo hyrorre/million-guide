@@ -19,26 +19,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-    <!-- スムーズスクロール部分の記述 -->
-    <script>
-      $(document).on('turbolinks:load', function(){
-        // #で始まるアンカーをクリックした場合に処理
-        $('a[href^="#"]').click(function() {
-            // スクロールの速度
-            var speed = 400; // ミリ秒
-            // アンカーの値取得
-            var href= $(this).attr("href");
-            // 移動先を取得
-            var target = $(href == "#" || href == "" ? 'html' : href);
-            // 移動先を数値で取得
-            var position = target.offset().top;
-            // スムーススクロール
-            $('body,html').animate({scrollTop:position}, speed, 'swing');
-            return false;
-        });
-      });
-    </script>
 
     <%= display_meta_tags(default_meta_tags) %>
     <%= csrf_meta_tags %>
@@ -49,7 +29,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
     <div id="pagetop"></div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
