@@ -110,7 +110,7 @@ table.scoretable {
 	padding-top: 0px;
 	margin-top: 0px;
 	margin-bottom: 10px;
-  	border-spacing: 10px 0;
+  	border-spacing: 10px 0px;
 }
 
 table.scoretable a {
@@ -118,7 +118,9 @@ table.scoretable a {
 }
 
 table.scoretable th {
-	height: auto;
+	padding: 1px;
+	margin: 0px;
+	height: 11px;
 	font-size: 8px;
 }
 table.scoretable td {
@@ -126,6 +128,8 @@ table.scoretable td {
 	text-align: center;
 	border: 1px solid black;
 	padding: 2px 0px;
+	margin: 0px;
+	height: 24px;
 }
 
 table.scoretable td.diff0 {
