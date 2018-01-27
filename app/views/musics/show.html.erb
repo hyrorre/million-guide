@@ -1,30 +1,30 @@
 <meta name="viewport" content="width=480">
-<% title_diff = "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %>
-<% set_meta_tags title: title_diff, og: { title: title_diff + " | ミリシタ譜面ビューア", image: image_url("jackets/#{@music.idstr}.jpg") } %>
+<% title_diff = "#{@music.title} [#{@difficulty_str[@difficulty]}]" %>
+<% set_meta_tags title: title_diff, og: {title: title_diff + " | ミリシタ譜面ビューア", image: image_url("jackets/#{@music.idstr}.jpg")} %>
 <div class="musics_show_container">
-  <h1>ミリシタ譜面ビューア</h1>
-  <p><%= link_to "Home", musics_index_path() %> > <%= title_diff %></p>
-  <h2><%= title_diff %></h2>
-  <details>
-    <summary>Settings</summary>
-    <h5 class="inline">
-      Width
-      <select name="Width" id="width_select">
-        <% for i in 5..20 do %>
-          <option value="<%= i * 10 %>" class="opval<%= i * 10 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
-        <% end %>
-      </select>
-    </h5>
-    <h5>
-      Height
-      <select name="Height" id="height_select">
-        <% for i in 5..20 do %>
-          <option value="<%= i * 10 %>" class="opval<%= i * 10 %>", <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
-        <% end %>
-      </select>
-    </h5>
-    <p>仕様上、Heightを大きくしすぎると譜面の一部が消えます。適度な値で調整してください。</p>
-  </details>
-  <canvas id="cv0" width="440" height="1800"></canvas>
-  <canvas id="cv1" width="440" height="1800"></canvas>
+	<h1>ミリシタ譜面ビューア</h1>
+	<p><%= link_to "Home", musics_index_path %> > <%= title_diff %></p>
+	<h2><%= title_diff %></h2>
+	<details>
+		<summary>Settings</summary>
+		<h5>
+			Width
+			<select name="Width" id="width_select" title="Width">
+				<% for i in 5..20 do %>
+					<option value="<%= i * 10 %>" class="opval<%= i * 10 %>" <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+				<% end %>
+			</select>
+		</h5>
+		<h5>
+			Height
+			<select name="Height" id="height_select" title="Height">
+				<% for i in 5..20 do %>
+					<option value="<%= i * 10 %>" class="opval<%= i * 10 %>" <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+				<% end %>
+			</select>
+		</h5>
+		<p>仕様上、Heightを大きくしすぎると譜面の一部が消えます。適度な値で調整してください。</p>
+	</details>
+	<canvas id="cv0" width="440" height="1800"></canvas>
+	<canvas id="cv1" width="440" height="1800"></canvas>
 </div>

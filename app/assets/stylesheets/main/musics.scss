@@ -2,25 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .musics_index_container {
-  width: 480px;
-  margin: 0px auto;
+	width: 480px;
+	margin: 0px auto;
 }
 
 .musics_show_container {
-  width: 480px;
-  margin: 0px auto;
+	width: 480px;
+	margin: 0px auto;
 }
 
 .floating_div {
-  bottom: 80px;
-  right: 20px;
-  position: fixed;
-  z-index: 1;
-  border: 1px solid #000000;
-  background-color: #FFFFFF;
-  padding: 5px;
+	bottom: 80px;
+	right: 20px;
+	position: fixed;
+	z-index: 1;
+	border: 1px solid #000000;
+	background-color: #FFFFFF;
+	padding: 5px;
 }
 
 .floating_div i {
@@ -54,6 +53,7 @@ ul {
 	list-style-type: none;
 	padding-left: 10px;
 }
+
 img.jacket {
 	width: 75px;
 	height: 75px;
@@ -67,10 +67,12 @@ img.musictypeimage {
 	height: 25px;
 	float: left;
 }
+
 li {
 	padding: 10px 0px 0px 0px;
 	margin-top: 0px;
 }
+
 li + li, li > li {
 	border-top: 1px solid lightslategray;
 	min-height: 75px;
@@ -110,7 +112,7 @@ table.scoretable {
 	padding-top: 0px;
 	margin-top: 0px;
 	margin-bottom: 10px;
-  	border-spacing: 10px 0px;
+	border-spacing: 10px 0px;
 }
 
 table.scoretable a {
@@ -123,6 +125,7 @@ table.scoretable th {
 	height: 11px;
 	font-size: 8px;
 }
+
 table.scoretable td {
 	width: 40px;
 	text-align: center;
@@ -174,8 +177,8 @@ details p {
 
 td.bms_exist_false a {
 	pointer-events: none; /* aタグのリンクを無効にする */
-	cursor: default;  /* マウスオーバー時のカーソルをdefaultに固定 */
-	text-decoration: none;  /* 下線等を消す。 */
+	cursor: default; /* マウスオーバー時のカーソルをdefaultに固定 */
+	text-decoration: none; /* 下線等を消す。 */
 	color: black;
 }
 
