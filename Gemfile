@@ -25,6 +25,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'meta-tags'
 gem 'sitemap_generator'
+gem 'google-analytics-rails'
 
 gem 'jquery-turbolinks'
 
