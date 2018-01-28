@@ -35,7 +35,18 @@ $(document).on('turbolinks:load', function(){
 		if(body.attr('data-action') === 'index'){
 			let options = {
 				// 検索するターゲットデータ
-				valueNames: ['title', 'kana', 'order', 'musictype', 'diffnum0', 'diffnum1', 'diffnum2', 'diffnum3', 'diffnum4', 'added_on']
+				valueNames: [
+					'title',
+					'kana',
+					'order',
+					'musictype',
+					'diffnum0',
+					'diffnum1',
+					'diffnum2',
+					'diffnum3',
+					'diffnum4',
+					'added_on'
+				]
 			};
 			// ターゲットとなるID
 			let itemList = new List('itemLists', options);
