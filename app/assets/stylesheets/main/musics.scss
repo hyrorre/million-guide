@@ -2,14 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.musics_index_container {
-	width: 480px;
-	margin: 0px auto;
-}
-
-.musics_show_container {
-	width: 480px;
-	margin: 0px auto;
+body {
+	width: 464px;
+	margin: 8px auto;
 }
 
 .floating_div {
@@ -187,5 +182,5 @@ td.bms_exist_false a {
 }
 
 #pagebottom {
-	margin-bottom: 100px;
+	margin-bottom: 180px;
 }
