@@ -1,5 +1,5 @@
 <meta name="viewport" content="width=480">
-<% title_diff = "#{@music.title} [#{@difficulty_str[@difficulty]}]" %>
+<% title_diff = "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %>
 <% set_meta_tags title: title_diff, og: {title: title_diff + " | ミリシタ譜面ビューア", image: image_url("jackets/#{@music.idstr}.jpg")} %>
 <div class="musics_show_container">
 	<h1>ミリシタ譜面ビューア</h1>
