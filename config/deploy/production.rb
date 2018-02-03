@@ -49,7 +49,7 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server "million.hyrorre.com",
+server "13.230.153.154",
 user: "deploy",
 roles: %w{web db app},
 ssh_options: {
