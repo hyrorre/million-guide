@@ -292,6 +292,21 @@ Music.create(
   level_mmp: 0,
 )
 Music.create(
+	idstr: "aikost",
+	title: "合言葉はスタートアップ！",
+	kana: "あいことばはすたーとあっぷ",
+	musictype: 0,
+	order: 2015,
+	added_on: Date.new(2018, 1, 31),
+	updated_on: Date.new(2018, 1, 31),
+	level_2m: 4,
+	level_2mp: 11,
+	level_4m: 7,
+	level_6m: 12,
+	level_mm: 16,
+	level_mmp: 0,
+	)
+Music.create(
   idstr: "sutekise",
   title: "素敵なキセキ",
   kana: "すてきなきせき",
