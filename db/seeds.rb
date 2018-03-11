@@ -337,6 +337,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "hsymph",
+    title: "星屑のシンフォニア",
+    kana: "ほしくずのしんふぉにあ",
+    musictype: 2,
+    order: 2017,
+    added_on: Date.new(2018, 3, 3),
+    updated_on: Date.new(2018, 3, 3),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
