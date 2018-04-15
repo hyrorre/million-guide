@@ -353,7 +353,7 @@ Music.create(
 )
 Music.create(
     idstr: "zettaibreak",
-    title: "ZETTAI × BREAK‼ トゥインクルリズム",
+    title: "ZETTAI × BREAK!! トゥインクルリズム",
     kana: "ZETTAIBREAKてぅいんくるりずむ",
     musictype: 0,
     order: 2018,
@@ -619,5 +619,20 @@ Music.create(
     level_4m: 7,
     level_6m: 12,
     level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "unibeat",
+    title: "ユニゾン☆ビート",
+    kana: "ゆにぞんびーと",
+    musictype: 1,
+    order: 3017,
+    added_on: Date.new(2018, 4, 12),
+    updated_on: Date.new(2018, 4, 12),
+    level_2m: 3,
+    level_2mp: 10,
+    level_4m: 6,
+    level_6m: 11,
+    level_mm: 16,
     level_mmp: 0
 )
