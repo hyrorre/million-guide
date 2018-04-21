@@ -382,6 +382,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "meltyf",
+    title: "Melty Fantasia",
+    kana: "Melty Fantasia",
+    musictype: 1,
+    order: 2020,
+    added_on: Date.new(2018, 4, 20),
+    updated_on: Date.new(2018, 4, 20),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 7,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
