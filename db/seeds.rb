@@ -397,6 +397,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "boc",
+    title: "Birth of Color",
+    kana: "Birth of Color",
+    musictype: 0,
+    order: 2021,
+    added_on: Date.new(2018, 5, 4),
+    updated_on: Date.new(2018, 5, 4),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
