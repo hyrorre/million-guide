@@ -427,6 +427,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "ethamo",
+    title: "Eternal Harmony",
+    kana: "Eternal Harmony",
+    musictype: 1,
+    order: 2023,
+    added_on: Date.new(2018, 6, 4),
+    updated_on: Date.new(2018, 6, 4),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 18,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -694,5 +709,20 @@ Music.create(
     level_4m: 7,
     level_6m: 11,
     level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "vividcolor",
+    title: "vivid color",
+    kana: "vivid color",
+    musictype: 0,
+    order: 3019,
+    added_on: Date.new(2018, 6, 13),
+    updated_on: Date.new(2018, 6, 13),
+    level_2m: 3,
+    level_2mp: 11,
+    level_4m: 6,
+    level_6m: 12,
+    level_mm: 17,
     level_mmp: 0
 )
