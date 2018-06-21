@@ -442,6 +442,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "kimihanabi",
+    title: "咲くは浮世の君花火",
+    kana: "さくはうきよのきみはなび",
+    musictype: 0,
+    order: 2024,
+    added_on: Date.new(2018, 6, 20),
+    updated_on: Date.new(2018, 6, 20),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 7,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
