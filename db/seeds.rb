@@ -52,6 +52,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "union",
+    title: "UNION!!",
+    kana: "UNION",
+    musictype: 3,
+    order: 1004,
+    added_on: Date.new(2018, 6, 29),
+    updated_on: Date.new(2018, 6, 29),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "utamas",
     title: "THE IDOLM@STER",
     kana: "THE IDOLM@STER",
@@ -94,6 +109,21 @@ Music.create(
     level_4m: 7,
     level_6m: 11,
     level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "machipri",
+    title: "待ち受けプリンス",
+    kana: "まちうけぷりんす",
+    musictype: 3,
+    order: 1300,
+    added_on: Date.new(2018, 4, 1),
+    updated_on: Date.new(2018, 4, 1),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 18,
     level_mmp: 0
 )
 Music.create(
