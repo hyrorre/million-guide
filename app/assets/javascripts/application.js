@@ -13,6 +13,7 @@
 //= require turbolinks
 //= require_tree ./main
 
+let itemList = null;
 
 $(document).on('turbolinks:load', function(){
 	// #で始まるアンカーをクリックした場合に処理
@@ -32,7 +33,7 @@ $(document).on('turbolinks:load', function(){
 	
 	let body = $('body');
 	if(body.attr('data-controller') === 'musics'){
-		if(body.attr('data-action') === 'index'){
+		if(body.attr('data-action') === 'index' && !itemList){
 			let options = {
 				// 検索するターゲットデータ
 				valueNames: [
@@ -49,7 +50,7 @@ $(document).on('turbolinks:load', function(){
 				]
 			};
 			// ターゲットとなるID
-			let itemList = new List('itemLists', options);
+			itemList = new List('itemLists', options);
 			
 			$('#date_sw').change(function(){
 				$('.added_on').toggle();
