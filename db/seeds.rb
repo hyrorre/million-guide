@@ -771,3 +771,18 @@ Music.create(
     level_mm: 17,
     level_mmp: 0
 )
+Music.create(
+    idstr: "fancani",
+    title: "ファンタジスタ・カーニバル",
+    kana: "ふぁんたじすたかーにばる",
+    musictype: 2,
+    order: 3020,
+    added_on: Date.new(2018, 7, 10),
+    updated_on: Date.new(2018, 7, 10),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 18,
+    level_mmp: 0
+)
