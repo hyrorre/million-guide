@@ -211,7 +211,6 @@ function load_draw(){
 						notes.push(new Note(lane, section, index, pulse));
 						if(index === 36){
 							ex_large_section = section + 1;
-							console.log("ex_large_section: " + ex_large_section.toString());
 						}
 					}
 				}
@@ -236,7 +235,6 @@ function load_draw(){
 			notes.push(new Note(lane, section, index, pulse));
 			if(index === 36){
 				ex_large_section = section + 1;
-				console.log("ex_large_section: " + ex_large_section.toString());
 			}
 			else if(snote.FollowingNotes !== null){
 				let len = snote.FollowingNotes.length;
@@ -267,8 +265,6 @@ function load_draw(){
 		}
 	);
 	max_section = notes[notes.length - 1].section + 1;
-	
-	console.dir(notes);
 	
 	// Canvas APIが利用できるかを判定（1）
 	if(HTMLCanvasElement){
