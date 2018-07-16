@@ -15,6 +15,10 @@
 
 let itemList = null;
 
+$(document).on('turbolinks:render', function(){
+    itemList = null;
+});
+
 $(document).on('turbolinks:load', function(){
 	// #で始まるアンカーをクリックした場合に処理
 	$('a[href^="#"]').click(function(){
