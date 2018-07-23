@@ -487,6 +487,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "blmstar",
+    title: "Blooming Star",
+    kana: "Blooming Star",
+    musictype: 3,
+    order: 2025,
+    added_on: Date.new(2018, 7, 21),
+    updated_on: Date.new(2018, 7, 21),
+    level_2m: 3,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
