@@ -10,16 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require turbolinks
 //= require_tree ./main
 
 let itemList = null;
 
-$(document).on('turbolinks:render', function(){
-    itemList = null;
-});
-
-$(document).on('turbolinks:load', function(){
+$(document).ready(function(){
 	// #で始まるアンカーをクリックした場合に処理
 	$('a[href^="#"]').click(function(){
 		// スクロールの速度
@@ -197,9 +192,9 @@ function load_draw(){
 		index += size;
 		return index;
 	}
-	
-	if(gon.format === 0){ //bms format
-		let lines = gon.score_str.split("\n");
+	let score_str = $("#score_str").text();
+	if($("#format").text() === "0"){ //bms format
+		let lines = score_str.split("\n");
 		for(let line of lines){
 			if(7 < line.length && line[0] === "#" && line[6] === ":"){
 				if(line[line.length - 1] === "\r"){
@@ -225,7 +220,7 @@ function load_draw(){
 	else{ //notes format
 		resolution = 23040;
 		let section_offset = -1;
-		let notes_obj = JSON.parse(gon.score_str);
+		let notes_obj = JSON.parse(score_str);
 		let snotes = notes_obj.Notes;
 		for(let snote of snotes){
 			let pulse = snote.Ticks;
@@ -236,7 +231,7 @@ function load_draw(){
 			section -= section_offset;
 			pulse -= section_offset * resolution;
 			let index = TypeSizeDirectionToIndex(snote.Type, snote.Size, snote.FlickDirection, -1, pulse);
-			let lane = EndXToLane(snote.EndX, gon.difficulty, index);
+			let lane = EndXToLane(snote.EndX, Number($("#difficulty").text()), index);
 			notes.push(new Note(lane, section, index, pulse));
 			if(index === 36){
 				ex_large_section = section + 1;
@@ -255,7 +250,7 @@ function load_draw(){
 					else{
 						findex = (slide_id + 1) * 10 + 7;
 					}
-					let flane = EndXToLane(fnote.EndX, gon.difficulty, findex);
+					let flane = EndXToLane(fnote.EndX, Number($("#difficulty").text()), findex);
 					notes.push(new Note(flane, fsection, findex, fpulse));
 					i++;
 				}
@@ -512,4 +507,4 @@ function load_draw(){
 			}
 		}
 	}
-};
+}

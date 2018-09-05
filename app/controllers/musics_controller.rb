@@ -29,19 +29,18 @@ class MusicsController < ApplicationController
 	
 	def show
 		@music = Music.find_by(idstr: params[:idstr])
-		gon.format = 0 # 0 : bms, 1 : notes
-		gon.score_str = ""
+		@format = "0" # 0 : bms, 1 : notes
+		@score_str = ""
 		@difficulty = params[:difficulty]
-		gon.difficulty = @difficulty.to_i
 		@difficulty_str = %w(2M 2M+ 4M 6M MM MM+)
 		filepath = "#{Rails.root}/app/assets/scores/#{@music.idstr}#{params[:difficulty]}.bms"
 		unless File.exist?(filepath)
 			filepath = "#{Rails.root}/app/assets/scores/#{@music.idstr}#{params[:difficulty]}.notes"
-			gon.format = 1
+			@format = 1
 		end
 		File.open(filepath) do |file|
 			file.each_line do |line|
-				gon.score_str += line
+				@score_str += line
 			end
 		end
 	end
