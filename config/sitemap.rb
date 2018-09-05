@@ -25,8 +25,7 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  # '/musics/index' を追加する
-  add musics_index_path, :priority => 0.9, :changefreq => 'weekly'
+  latest = Date.new(2000, 1, 1)
 
   # '/musics/show/idstr/difficulty' を追加する
   Music.find_each do |music|
@@ -38,8 +37,15 @@ SitemapGenerator::Sitemap.create do
         exist = File.exist?(filepath)
       end
       if exist then
-        add musics_show_path(music.idstr, i), :lastmod => music.updated_at, :priority => (i * 0.2), :changefreq => 'weekly'
+        add musics_show_path(music.idstr, i), :priority => (i * 0.2 + 0.1), :lastmod => music.updated_on
+        if latest < music.updated_on then
+          latest = music.updated_on
+        end
       end
     end
   end
+
+  # '/musics/index' を追加する
+  add musics_index_path, :priority => 0.9, :changefreq => 'weekly', :lastmod => latest
+
 end
