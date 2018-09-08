@@ -5,6 +5,8 @@ DIR=$(cd $(dirname $0); pwd)
 if [ -e html ]; then
 	echo "Directory 'html' is already exist."
 else
+	rails db:seed
+	rails sitemap:create
 	rails s -d
 	ruby output.rb
 	kill -9 `cat tmp/pids/server.pid`
@@ -12,6 +14,7 @@ else
 	ln -s $DIR/public/robots.txt $DIR/public/sitemap.xml.gz html/
 	rsync -acvL html/ lolipop:~/web/million/
 	rm -r html
+	rails sitemap:refresh
 fi
 
 exit 0
