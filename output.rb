@@ -22,6 +22,10 @@ ids = %w(afterschool aikost anpara bibabo blmstar boc brand dear dretra ethamo f
 array = Array.new
 array.push "/assets/application.js"
 array.push "/assets/application.css"
+array.push "/robots.txt"
+array.push "/sitemap.xml"
+array.push "/.htaccess"
+
 array.push "/musics/"
 ids.each do |id|
   for i in 0..4 do

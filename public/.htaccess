@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+RewriteRule ^(.*)/index.html$ /$1 [R=301,L]
+RewriteRule ^$ /musics [R=301,L]
+RewriteRule ^musics/show/(.*)$ /musics/$1 [R=301,L]
