@@ -27,7 +27,7 @@ SitemapGenerator::Sitemap.create do
 
   latest = Date.new(2000, 1, 1)
 
-  # '/musics/show/idstr/difficulty' を追加する
+  # '/musics/idstr/difficulty' を追加する
   Music.find_each do |music|
     for i in 0..4 do
       filepath = "#{Rails.root}/app/assets/scores/#{music.idstr}#{i}.bms"
@@ -45,7 +45,6 @@ SitemapGenerator::Sitemap.create do
     end
   end
 
-  # '/musics/index' を追加する
+  # '/musics' を追加する
   add musics_index_path, :priority => 0.9, :changefreq => 'weekly', :lastmod => latest
-
 end

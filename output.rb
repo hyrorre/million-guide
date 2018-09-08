@@ -22,10 +22,10 @@ ids = %w(afterschool aikost anpara bibabo blmstar boc brand dear dretra ethamo f
 array = Array.new
 array.push "/assets/application.js"
 array.push "/assets/application.css"
-array.push "/musics/index/"
+array.push "/musics/"
 ids.each do |id|
   for i in 0..4 do
-    array.push sprintf("/musics/show/%s/%d/", id, i)
+    array.push sprintf("/musics/%s/%d/", id, i)
   end
 end
 
