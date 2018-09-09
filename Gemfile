@@ -31,6 +31,10 @@ gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'google-analytics-rails'
 
+gem 'jquery-rails'
+gem 'listjs-rails'
+gem 'js_cookie_rails'
+
 #gem 'jquery-turbolinks'
 
 # Use Capistrano for deployment
