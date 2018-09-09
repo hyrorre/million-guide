@@ -24,9 +24,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
-gem 'gon'
-gem 'devise'
-gem 'activeadmin'
+#gem 'gon'
+#gem 'devise'
+#gem 'activeadmin'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'google-analytics-rails'
