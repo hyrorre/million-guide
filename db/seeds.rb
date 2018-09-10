@@ -532,6 +532,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "bharmony",
+    title: "brave HARMONY",
+    kana: "brave HARMONY",
+    musictype: 1,
+    order: 2027,
+    added_on: Date.new(2018, 9, 3),
+    updated_on: Date.new(2018, 9, 3),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 10,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
