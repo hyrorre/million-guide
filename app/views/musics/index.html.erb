@@ -32,9 +32,9 @@
 		<ul id="musiclist" class="list">
 			<% @musics.each_with_index do |music, j| %>
 				<li>
-					<%= image_tag("jackets/#{music.idstr}.jpg", :class => "jacket", lazy: true) %>
+					<%= image_tag("jackets/#{music.idstr}.jpg", :class => "jacket") %>
 					<h3 class="title"><%= music.title %></h3>
-					<%= image_tag("musictypes/#{music.musictype}.png", :class => "musictypeimage", lazy: true) %>
+					<%= image_tag("musictypes/#{music.musictype}.png", :class => "musictypeimage") %>
 					<table class="scoretable">
 						<tr>
 							<% for i in 0..4 do %>

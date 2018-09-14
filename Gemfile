@@ -34,7 +34,7 @@ gem 'google-analytics-rails'
 gem 'jquery-rails'
 gem 'listjs-rails'
 gem 'js_cookie_rails'
-gem 'layzr-rails'
+#gem 'layzr-rails'
 
 #gem 'jquery-turbolinks'
 

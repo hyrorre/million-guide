@@ -1,9 +1,6 @@
 let itemList = null;
 
 $(document).ready(function(){
-	let layzr = new Layzr({normal: 'data-normal'});
-	layzr.update().check().handlers(true);
-
 	// #で始まるアンカーをクリックした場合に処理
 	$('a[href^="#"]').click(function(){
 		// スクロールの速度
