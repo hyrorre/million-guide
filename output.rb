@@ -26,7 +26,7 @@ array.push "/robots.txt"
 array.push "/sitemap.xml"
 array.push "/.htaccess"
 
-array.push "/musics/"
+array.push "/"
 ids.each do |id|
   for i in 0..4 do
     array.push sprintf("/musics/%s/%d/", id, i)

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'musics', to: 'musics#index', as: 'musics_index'
+  root to: 'musics#index', as: 'musics_index'
 
   get 'musics/:idstr/:difficulty', to: 'musics#show', as: 'musics_show'
 
