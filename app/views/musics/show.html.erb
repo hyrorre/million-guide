@@ -4,7 +4,27 @@
 <div class="musics_show_container">
 	<h1>ミリシタ譜面ビューア</h1>
 	<p><%= link_to "Home", musics_index_path %> > <%= title_diff %></p>
-	<h2><%= title_diff %></h2>
+	<ul id="musiclist" class="list"><li>
+		<%= image_tag("jackets/#{@music.idstr}.jpg", :class => "jacket") %>
+		<h3 class="title"><%= @music.title %></h3>
+		<%= image_tag("musictypes/#{@music.musictype}.png", :class => "musictypeimage") %>
+		<table class="scoretable">
+			<tr>
+				<% for i in 0..4 do %>
+					<th><%= @difficulty_str[i] %></th>
+				<% end %>
+			</tr>
+			<tr>
+				<% for i in 0..4 do %>
+					<td class="diff<%= i %> bms_exist_<%= @difficulty.to_i != i %>">
+						<%= link_to @levels[i], musics_show_path(@music.idstr, i) %>
+					</td>
+					<p class="diffnum diffnum<%= i %>"><%= @levels[i] %></p>
+				<% end %>
+			</tr>
+		</table>
+		<p class="added_on"><%= @music.added_on %></p>
+	</li></ul>
 	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<!-- million-rectangle -->
 	<ins class="adsbygoogle"
@@ -15,9 +35,9 @@
 	(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
 	<details>
-		<summary>Settings</summary>
+		<summary>設定</summary>
 		<h5>
-			Width
+			譜面の幅
 			<select name="Width" id="width_select" title="Width">
 				<% for i in 5..20 do %>
 					<option value="<%= i * 10 %>" class="opval<%= i * 10 %>" <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
@@ -25,14 +45,14 @@
 			</select>
 		</h5>
 		<h5>
-			Height
+			譜面の高さ
 			<select name="Height" id="height_select" title="Height">
 				<% for i in 5..20 do %>
 					<option value="<%= i * 10 %>" class="opval<%= i * 10 %>" <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
 				<% end %>
 			</select>
 		</h5>
-		<p>仕様上、Heightを大きくしすぎると譜面の一部が消えます。適度な値で調整してください。</p>
+		<p>仕様上、高さを大きくしすぎると譜面の一部が消えます。適度な値で調整してください。</p>
 	</details>
 	<canvas id="cv0" width="440" height="1800"></canvas>
 	<canvas id="cv1" width="440" height="1800"></canvas>

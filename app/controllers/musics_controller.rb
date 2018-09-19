@@ -29,6 +29,14 @@ class MusicsController < ApplicationController
 	
 	def show
 		@music = Music.find_by(idstr: params[:idstr])
+		@levels = [
+			@music.level_2m,
+			@music.level_2mp,
+			@music.level_4m,
+			@music.level_6m,
+			@music.level_mm,
+			@music.level_mmp
+		]
 		@format = "0" # 0 : bms, 1 : notes
 		@score_str = ""
 		@difficulty = params[:difficulty]
