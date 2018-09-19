@@ -88,6 +88,10 @@ li + li, li > li {
 	border-top: 1px solid lightslategray;
 }
 
+.ad-rectangle {
+	text-align: center;
+}
+
 li > li {
 	padding: 10px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
