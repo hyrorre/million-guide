@@ -547,6 +547,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "siscafe",
+    title: "オーディナリィ・クローバー",
+    kana: "おーでぃなりぃくろーばー",
+    musictype: 2,
+    order: 2028,
+    added_on: Date.new(2018, 9, 21),
+    updated_on: Date.new(2018, 9, 21),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -859,6 +874,36 @@ Music.create(
     level_4m: 6,
     level_6m: 11,
     level_mm: 15,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "idolchang",
+    title: "チョー↑元気Show☆アイドルch@ng!",
+    kana: "ちょうじょうげんしょうあいどるちゃん",
+    musictype: 0,
+    order: 3022,
+    added_on: Date.new(2018, 9, 12),
+    updated_on: Date.new(2018, 9, 12),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "inthena",
+    title: "...In The Name Of。 ...LOVE?",
+    kana: "In The Name Of Love",
+    musictype: 1,
+    order: 3023,
+    added_on: Date.new(2018, 9, 29),
+    updated_on: Date.new(2018, 9, 29),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
     level_mmp: 0
 )
 Music.create(
