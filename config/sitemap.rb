@@ -48,5 +48,5 @@ SitemapGenerator::Sitemap.create do
   end
 
   # '/' を追加する
-  add musics_index_path, :priority => 0.9, :changefreq => 'weekly', :lastmod => latest
+  add musics_index_path, :priority => 1.0, :changefreq => 'weekly', :lastmod => latest
 end
