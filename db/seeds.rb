@@ -562,6 +562,36 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "stamelo",
+    title: "Starry Melody",
+    kana: "Starry Melody",
+    musictype: 0,
+    order: 2029,
+    added_on: Date.new(2018, 10, 3),
+    updated_on: Date.new(2018, 10, 3),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "lastress",
+    title: "ラスト・アクトレス",
+    kana: "らすとあくとれす",
+    musictype: 1,
+    order: 2030,
+    added_on: Date.new(2018, 10, 22),
+    updated_on: Date.new(2018, 10, 22),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -900,6 +930,36 @@ Music.create(
     added_on: Date.new(2018, 9, 29),
     updated_on: Date.new(2018, 9, 29),
     level_2m: 5,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "heartdays",
+    title: "Heart♡・デイズ・Night☆",
+    kana: "HeartでいずNight",
+    musictype: 2,
+    order: 3024,
+    added_on: Date.new(2018, 10, 13),
+    updated_on: Date.new(2018, 10, 13),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 18,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "fesillumi",
+    title: "フェスタ・イルミネーション",
+    kana: "ふぇすたいるみねーしょん",
+    musictype: 0,
+    order: 3025,
+    added_on: Date.new(2018, 10, 31),
+    updated_on: Date.new(2018, 10, 31),
+    level_2m: 3,
     level_2mp: 11,
     level_4m: 7,
     level_6m: 12,
