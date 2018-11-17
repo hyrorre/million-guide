@@ -592,6 +592,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "jparty",
+    title: "ジャングル☆パーティー",
+    kana: "じゃんぐるぱーてぃー",
+    musictype: 2,
+    order: 2031,
+    added_on: Date.new(2018, 11, 5),
+    updated_on: Date.new(2018, 11, 5),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 18,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -962,6 +977,21 @@ Music.create(
     level_2m: 3,
     level_2mp: 11,
     level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "koimask",
+    title: "恋心マスカレード",
+    kana: "こいごころますかれーど",
+    musictype: 1,
+    order: 3026,
+    added_on: Date.new(2018, 11, 14),
+    updated_on: Date.new(2018, 11, 14),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 8,
     level_6m: 12,
     level_mm: 17,
     level_mmp: 0
