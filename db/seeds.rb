@@ -67,9 +67,24 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "dreaming",
+    title: "Dreaming!",
+    kana: "Dreaming",
+    musictype: 3,
+    order: 1005,
+    added_on: Date.new(2018, 12, 14),
+    updated_on: Date.new(2018, 12, 14),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "utamas",
     title: "THE IDOLM@STER",
-    kana: "THE IDOLM@STER",
+    kana: "THE IDOLMASTER",
     musictype: 3,
     order: 1101,
     added_on: Date.new(2017, 6, 29),
@@ -139,6 +154,21 @@ Music.create(
     level_4m: 7,
     level_6m: 12,
     level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "merry",
+    title: "メリー",
+    kana: "めりー",
+    musictype: 3,
+    order: 1401,
+    added_on: Date.new(2018, 12, 25),
+    updated_on: Date.new(2018, 12, 25),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
     level_mmp: 0
 )
 Music.create(
@@ -607,6 +637,51 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "harmonics",
+    title: "ハーモニクス",
+    kana: "はーもにくす",
+    musictype: 1,
+    order: 2032,
+    added_on: Date.new(2018, 11, 21),
+    updated_on: Date.new(2018, 11, 21),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "pdreamer",
+    title: "PRETTY DREAMER",
+    kana: "PRETTY DREAMER",
+    musictype: 0,
+    order: 2033,
+    added_on: Date.new(2018, 12, 04),
+    updated_on: Date.new(2018, 12, 04),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "harumachi",
+    title: "ハルマチ女子",
+    kana: "はるまちじょし",
+    musictype: 2,
+    order: 2034,
+    added_on: Date.new(2018, 12, 21),
+    updated_on: Date.new(2018, 12, 21),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -997,6 +1072,36 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "fwind",
+    title: "FIND YOUR WIND!",
+    kana: "FIND YOUR WIND",
+    musictype: 2,
+    order: 3027,
+    added_on: Date.new(2018, 11, 30),
+    updated_on: Date.new(2018, 11, 30),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "astation",
+    title: "アニマル☆ステイション！",
+    kana: "あにまるすていしょん",
+    musictype: 0,
+    order: 3028,
+    added_on: Date.new(2018, 12, 30),
+    updated_on: Date.new(2018, 12, 30),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 19,
+    level_mmp: 0
+)
+Music.create(
     idstr: "blmstar",
     title: "Blooming Star",
     kana: "Blooming Star",
@@ -1009,5 +1114,20 @@ Music.create(
     level_4m: 7,
     level_6m: 12,
     level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "hatsuboshimix",
+    title: "THE IDOLM＠STER 初星-mix",
+    kana: "THE IDOLMASTER はつぼしmix",
+    musictype: 3,
+    order: 5002,
+    added_on: Date.new(2019, 1, 1),
+    updated_on: Date.new(2018, 1, 1),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 17,
     level_mmp: 0
 )

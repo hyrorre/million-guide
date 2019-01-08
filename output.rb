@@ -30,7 +30,83 @@ def output_html(array)
 	end
 end
 
-ids = %w(afterschool aikost anpara bharmony bibabo blmstar boc brand dear dretra ethamo fairytale fancani fesillumi goodsleep grosto happydarling happyeffect happylucky heartdays homesf hsymph humming hweekend idolchang inthena jibure jireha jparty kimihanabi koimask kokokae kokoroex kuraki lastress lesson liar locomo machipri meltyf neversleep nijile orikoe pregra priamb prologue ready ruriiro senti siscafe smileichi sss stamelo standing sunrhythm sutekise sympho thankyou tokimekionpu top unibeat union utamas vividcolor welcome why zettaibreak)
+ids = %w(
+	afterschool
+	aikost
+	anpara
+	astation
+	bharmony
+	bibabo
+	blmstar
+	boc
+	brand
+	dear
+	dreaming
+	dretra
+	ethamo
+	fairytale
+	fancani
+	fesillumi
+	fwind
+	goodsleep
+	grosto
+	happydarling
+	happyeffect
+	happylucky
+	harmonics
+	harumachi
+	hatsuboshimix
+	heartdays
+	homesf
+	hsymph
+	humming
+	hweekend
+	idolchang
+	inthena
+	jibure
+	jireha
+	jparty
+	kimihanabi
+	koimask
+	kokokae
+	kokoroex
+	kuraki
+	lastress
+	lesson
+	liar
+	locomo
+	machipri
+	meltyf
+	merry
+	neversleep
+	nijile
+	orikoe
+	pdreamer
+	pregra
+	priamb
+	prologue
+	ready
+	ruriiro
+	senti
+	siscafe
+	smileichi
+	sss
+	stamelo
+	standing
+	sunrhythm
+	sutekise
+	sympho
+	thankyou
+	tokimekionpu
+	top
+	unibeat
+	union
+	utamas
+	vividcolor
+	welcome
+	why
+	zettaibreak
+)
 
 array = Array.new
 array.push "/assets/application.js"
