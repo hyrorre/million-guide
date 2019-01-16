@@ -24,3 +24,12 @@
 
 # Ignore IDEA config.
 /.idea/
+
+# Ignore VSCode config.
+/.vscode/
+
+# Ignore generated sitemap.
+/public/sitemap.xml*
+
+# Ignore generated htmls.
+/html/

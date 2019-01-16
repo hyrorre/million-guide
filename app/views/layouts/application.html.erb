@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<%= analytics_init if Rails.env.production? %>
-	<!--<script type="text/javascript">-->
-  <!--var nend_params = {"media": 41408, "site": 287098, "spot": 838039, "type": 2, "oriented": 1};-->
-	<!--</script>-->
-	<!--<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>-->
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112158135-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-112158135-1');
+	</script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	
 	<%= display_meta_tags(default_meta_tags) %>
 	<%= csrf_meta_tags %>
 	
-	<%= include_gon %>
-	<%= javascript_include_tag "application" %>
-	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<%= stylesheet_link_tag 'application', media: 'all' %>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-1154104535471881",
+			enable_page_level_ads: true
+		});
+	</script>
 </head>
 
 <body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
@@ -31,6 +35,8 @@
 		<a href="#pagebottom"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
 	</div>
 	<div id="pagebottom"></div>
+
 	<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+	<%= javascript_include_tag "application" %>
 </body>
 </html>

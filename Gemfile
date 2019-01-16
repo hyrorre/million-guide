@@ -9,12 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
-group :development do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'mysql2', '~> 0.3.20'
-end
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -24,12 +19,17 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
 
-gem 'gon'
-gem 'devise'
-gem 'activeadmin'
+#gem 'gon'
+#gem 'devise'
+#gem 'activeadmin'
 gem 'meta-tags'
 gem 'sitemap_generator'
 gem 'google-analytics-rails'
+
+gem 'jquery-rails'
+gem 'listjs-rails'
+gem 'js_cookie_rails'
+#gem 'layzr-rails'
 
 #gem 'jquery-turbolinks'
 
@@ -44,9 +44,9 @@ group :development do
 end
 
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+# gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+# gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production

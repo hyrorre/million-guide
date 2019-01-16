@@ -1,5 +1,7 @@
 # Set the host name for URL creation
 SitemapGenerator::Sitemap.default_host = "https://million.hyrorre.com"
+SitemapGenerator::Sitemap.compress = false
+SitemapGenerator::Sitemap.include_root = false
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
@@ -25,10 +27,9 @@ SitemapGenerator::Sitemap.create do
   #     add article_path(article), :lastmod => article.updated_at
   #   end
 
-  # '/musics/index' を追加する
-  add musics_index_path, :priority => 0.9, :changefreq => 'weekly'
+  latest = Date.new(2000, 1, 1)
 
-  # '/musics/show/idstr/difficulty' を追加する
+  # '/musics/idstr/difficulty' を追加する
   Music.find_each do |music|
     for i in 0..4 do
       filepath = "#{Rails.root}/app/assets/scores/#{music.idstr}#{i}.bms"
@@ -38,8 +39,14 @@ SitemapGenerator::Sitemap.create do
         exist = File.exist?(filepath)
       end
       if exist then
-        add musics_show_path(music.idstr, i), :lastmod => music.updated_at, :priority => (i * 0.2), :changefreq => 'weekly'
+        add musics_show_path(music.idstr, i), :priority => (i * 0.2 + 0.1), :changefreq => 'yearly', :lastmod => music.updated_on
+        if latest < music.updated_on then
+          latest = music.updated_on
+        end
       end
     end
   end
+
+  # '/' を追加する
+  add musics_index_path, :priority => 1.0, :changefreq => 'weekly', :lastmod => latest
 end

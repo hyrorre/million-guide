@@ -5,16 +5,29 @@
 		PCなどでも動作しますが、スマホなどの縦画面端末推奨です<br>
 		(Smartphone portrait is recommended.)<br>
 		Android版ChromeおよびiOS版Safari最新版にて動作確認済<br>
-		問題などがあれば作者のTwitter(<a target="_blank" href="https://twitter.com/hyrorre">@hyrorre</a>)まで
+		問題などがあれば作者のTwitter(<a target="_blank" href="https://twitter.com/hyrorre">@hyrorre</a>)、<br>
+		または以下のフォームまで<br>
+		<a href="https://hyrorre.com/contact/" target="_blank">Contact | HY Techs</a>
 	</p>
+	<div class="ad-rectangle">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- million-rectangle -->
+		<ins class="adsbygoogle"
+			style="display:inline-block;width:336px;height:280px"
+			data-ad-client="ca-pub-1154104535471881"
+			data-ad-slot="1424163788"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
 	<h2>曲一覧</h2>
 	<div id="itemLists">
 		<details>
-			<summary>Search, Sort</summary>
-			<h5>Search</h5>
-			<input type="text" class="search" placeholder="検索"><br>
+			<summary>検索・並び替え</summary>
+			<h5>検索</h5>
+			<input type="text" class="search" placeholder=""><br>
 
-			<h5>Sort</h5>
+			<h5>並び替え</h5>
 			<button class="sort" data-sort="order">Default</button>
 			<button class="sort" data-sort="kana">Title</button>
 			<button class="sort" data-sort="musictype">Type</button>
@@ -54,10 +67,22 @@
 					<p class="kana"><%= music.kana %></p>
 					<p class="order"><%= music.order %></p>
 					<p class="musictype"><%= music.musictype %></p>
-					<% if j % 10 == 4 %>
-						<script type="text/javascript">
-							var nend_params = {"media":41408, "site":287098, "spot":838045, "type":10, "oriented":1};
-						</script>
+					<% if j % 20 == 8 %>
+						<!-- <div class="ad-infeed">
+							<script type="text/javascript">
+								var nend_params = {"media":41408, "site":287098, "spot":838045, "type":10, "oriented":1};
+							</script>
+							<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+							<ins class="adsbygoogle"
+								style="display:block"
+								data-ad-format="fluid"
+								data-ad-layout-key="-hl-4+2z-7s+4c"
+								data-ad-client="ca-pub-1154104535471881"
+								data-ad-slot="7155950731"></ins>
+							<script>
+								(adsbygoogle = window.adsbygoogle || []).push({});
+							</script>
+						</div> -->
 					<% end %>
 				</li>
 			<% end %>
