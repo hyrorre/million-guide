@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require list
 //= require js.cookie
-//= require_tree ./lib
 //= require_tree ./main
