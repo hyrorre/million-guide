@@ -34,12 +34,16 @@ ids = %w(
 	afterschool
 	aikost
 	anpara
+	asacre
 	astation
 	bharmony
 	bibabo
 	blmstar
+	bncsmile
 	boc
 	brand
+	chulov
+	datpri
 	dear
 	dreaming
 	dretra
@@ -85,7 +89,9 @@ ids = %w(
 	pregra
 	priamb
 	prologue
+	raisef
 	ready
+	rolltri
 	ruriiro
 	senti
 	siscafe
