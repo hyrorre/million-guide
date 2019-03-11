@@ -41,6 +41,7 @@ ids = %w(
 	blmstar
 	bncsmile
 	boc
+  bonbonv
 	brand
 	chulov
 	datpri
@@ -52,6 +53,7 @@ ids = %w(
 	fancani
 	fesillumi
 	fwind
+  getcre
 	goodsleep
 	grosto
 	happydarling
@@ -80,6 +82,7 @@ ids = %w(
 	liar
 	locomo
 	machipri
+  mariat
 	meltyf
 	merry
 	neversleep

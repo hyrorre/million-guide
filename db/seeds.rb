@@ -727,6 +727,36 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "getcre",
+    title: "月曜日のクリームソーダ",
+    kana: "げつようびのくりーむそーだ",
+    musictype: 1,
+    order: 2038,
+    added_on: Date.new(2019, 2, 19),
+    updated_on: Date.new(2019, 2, 19),
+    level_2m: 5,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "bonbonv",
+    title: "Bonnes! Bonnes!! Vacances!!!",
+    kana: "Bonnes Bonnes Vacances",
+    musictype: 0,
+    order: 2039,
+    added_on: Date.new(2019, 3, 4),
+    updated_on: Date.new(2019, 3, 4),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -1189,6 +1219,21 @@ Music.create(
     level_4m: 7,
     level_6m: 12,
     level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "mariat",
+    title: "Maria Trap",
+    kana: "Maria Trap",
+    musictype: 1,
+    order: 3032,
+    added_on: Date.new(2019, 2, 28),
+    updated_on: Date.new(2019, 2, 28),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
     level_mmp: 0
 )
 Music.create(
