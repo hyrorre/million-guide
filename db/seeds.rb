@@ -82,6 +82,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "flyers",
+    title: "Flyers!!!",
+    kana: "Flyers",
+    musictype: 3,
+    order: 1006,
+    added_on: Date.new(2019, 7, 1),
+    updated_on: Date.new(2019, 7, 1),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "utamas",
     title: "THE IDOLM@STER",
     kana: "THE IDOLMASTER",
@@ -131,7 +146,7 @@ Music.create(
     title: "待ち受けプリンス",
     kana: "まちうけぷりんす",
     musictype: 3,
-    order: 1300,
+    order: 1203,
     added_on: Date.new(2018, 4, 1),
     updated_on: Date.new(2018, 4, 1),
     level_2m: 5,
@@ -146,7 +161,7 @@ Music.create(
     title: "ToP!!!!!!!!!!!!!",
     kana: "top",
     musictype: 3,
-    order: 1400,
+    order: 1204,
     added_on: Date.new(2018, 8, 5),
     updated_on: Date.new(2018, 8, 5),
     level_2m: 4,
@@ -161,7 +176,7 @@ Music.create(
     title: "メリー",
     kana: "めりー",
     musictype: 3,
-    order: 1401,
+    order: 1205,
     added_on: Date.new(2018, 12, 25),
     updated_on: Date.new(2018, 12, 25),
     level_2m: 4,
@@ -169,6 +184,81 @@ Music.create(
     level_4m: 8,
     level_6m: 12,
     level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "overmas",
+    title: "オーバーマスター",
+    kana: "おーばーますたー",
+    musictype: 3,
+    order: 1206,
+    added_on: Date.new(2019, 3, 29),
+    updated_on: Date.new(2019, 3, 29),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "leader",
+    title: "LEADER!!",
+    kana: "LEADER",
+    musictype: 3,
+    order: 1207,
+    added_on: Date.new(2019, 5, 20),
+    updated_on: Date.new(2019, 5, 20),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "music",
+    title: "MUSIC♪",
+    kana: "MUSIC",
+    musictype: 3,
+    order: 1208,
+    added_on: Date.new(2019, 6, 27),
+    updated_on: Date.new(2019, 6, 27),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 18,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "invjus",
+    title: "インヴィンシブル・ジャスティス",
+    kana: "いんゔぃんしぶるじゃすてぃす",
+    musictype: 3,
+    order: 1403,
+    added_on: Date.new(2019, 4, 1),
+    updated_on: Date.new(2019, 4, 1),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "jusvoi",
+    title: "Justice OR Voice",
+    kana: "Justice OR Voice",
+    musictype: 3,
+    order: 1500,
+    added_on: Date.new(2019, 4, 2),
+    updated_on: Date.new(2019, 4, 2),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 7,
+    level_6m: 13,
+    level_mm: 18,
     level_mmp: 0
 )
 Music.create(
@@ -757,6 +847,96 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "pkpkik",
+    title: "ピコピコIIKO! インベーダー",
+    kana: "ぴこぴこIIKOいんべーだー",
+    musictype: 2,
+    order: 2040,
+    added_on: Date.new(2019, 3, 19),
+    updated_on: Date.new(2019, 3, 19),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "epitia",
+    title: "Episode. Tiara",
+    kana: "Episode Tiara",
+    musictype: 0,
+    order: 2041,
+    added_on: Date.new(2019, 4, 19),
+    updated_on: Date.new(2019, 4, 19),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "prmula",
+    title: "プリムラ",
+    kana: "ぷりむら",
+    musictype: 1,
+    order: 2042,
+    added_on: Date.new(2019, 5, 2),
+    updated_on: Date.new(2019, 5, 2),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 7,
+    level_6m: 13,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "frlove",
+    title: "fruity love",
+    kana: "fruity love",
+    musictype: 2,
+    order: 2043,
+    added_on: Date.new(2019, 6, 3),
+    updated_on: Date.new(2019, 6, 3),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "whitev",
+    title: "White Vows",
+    kana: "White Vows",
+    musictype: 2,
+    order: 2044,
+    added_on: Date.new(2019, 6, 19),
+    updated_on: Date.new(2019, 6, 19),
+    level_2m: 3,
+    level_2mp: 9,
+    level_4m: 7,
+    level_6m: 10,
+    level_mm: 14,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "donslo",
+    title: "dans l'obscurité",
+    kana: "dans lobscurite",
+    musictype: 1,
+    order: 2045,
+    added_on: Date.new(2019, 7, 23),
+    updated_on: Date.new(2019, 7, 23),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 19,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -1233,6 +1413,141 @@ Music.create(
     level_2mp: 11,
     level_4m: 7,
     level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "anonek",
+    title: "あのね、聞いてほしいことがあるんだ",
+    kana: "あのねきいてほしいことがあるんだ",
+    musictype: 2,
+    order: 3033,
+    added_on: Date.new(2019, 3, 12),
+    updated_on: Date.new(2019, 3, 12),
+    level_2m: 3,
+    level_2mp: 10,
+    level_4m: 6,
+    level_6m: 11,
+    level_mm: 14,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "weareone",
+    title: "WE ARE ONE!!",
+    kana: "WE ARE ONE",
+    musictype: 0,
+    order: 3034,
+    added_on: Date.new(2019, 3, 27),
+    updated_on: Date.new(2019, 3, 27),
+    level_2m: 5,
+    level_2mp: 12,
+    level_4m: 7,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "bstrik",
+    title: "ビギナーズ☆ストライク",
+    kana: "びぎなーずすとらいく",
+    musictype: 1,
+    order: 3035,
+    added_on: Date.new(2019, 4, 12),
+    updated_on: Date.new(2019, 4, 12),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "olnote",
+    title: "教えてlast note…",
+    kana: "おしえてlast note",
+    musictype: 2,
+    order: 3036,
+    added_on: Date.new(2019, 4, 29),
+    updated_on: Date.new(2019, 4, 29),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "hanasb",
+    title: "はなしらべ",
+    kana: "はなしらべ",
+    musictype: 0,
+    order: 3037,
+    added_on: Date.new(2019, 5, 12),
+    updated_on: Date.new(2019, 5, 12),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 15,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "ryuseg",
+    title: "流星群",
+    kana: "りゅうせいぐん",
+    musictype: 1,
+    order: 3038,
+    added_on: Date.new(2019, 5, 30),
+    updated_on: Date.new(2019, 5, 30),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "orsora",
+    title: "オレンジの空の下",
+    kana: "おれんじのそらのした",
+    musictype: 2,
+    order: 3039,
+    added_on: Date.new(2019, 6, 11),
+    updated_on: Date.new(2019, 6, 11),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 15,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "rebell",
+    title: "Rebellion",
+    kana: "Rebellion",
+    musictype: 0,
+    order: 3040,
+    added_on: Date.new(2019, 6, 28),
+    updated_on: Date.new(2019, 6, 28),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "mjourney",
+    title: "MUSIC JOURNEY",
+    kana: "MUSIC JOURNEY",
+    musictype: 2,
+    order: 3041,
+    added_on: Date.new(2019, 7, 15),
+    updated_on: Date.new(2019, 7, 15),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
     level_mm: 17,
     level_mmp: 0
 )

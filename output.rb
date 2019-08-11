@@ -33,6 +33,7 @@ end
 ids = %w(
 	afterschool
 	aikost
+  anonek
 	anpara
 	asacre
 	astation
@@ -43,19 +44,25 @@ ids = %w(
 	boc
   bonbonv
 	brand
+  bstrik
 	chulov
+  donslo
 	datpri
 	dear
 	dreaming
 	dretra
 	ethamo
+  epitia
 	fairytale
 	fancani
 	fesillumi
+  flyers
+  frlove
 	fwind
   getcre
 	goodsleep
 	grosto
+  hanasb
 	happydarling
 	happyeffect
 	happylucky
@@ -69,15 +76,18 @@ ids = %w(
 	hweekend
 	idolchang
 	inthena
+  invjus
 	jibure
 	jireha
 	jparty
+  jusvoi
 	kimihanabi
 	koimask
 	kokokae
 	kokoroex
 	kuraki
 	lastress
+  leader
 	lesson
 	liar
 	locomo
@@ -85,17 +95,26 @@ ids = %w(
   mariat
 	meltyf
 	merry
+  mjourney
+  music
 	neversleep
 	nijile
+  olnote
 	orikoe
+  orsora
+  overmas
 	pdreamer
+  pkpkik
 	pregra
 	priamb
+  prmula
 	prologue
 	raisef
 	ready
+  rebell
 	rolltri
 	ruriiro
+  ryuseg
 	senti
 	siscafe
 	smileichi
@@ -112,7 +131,9 @@ ids = %w(
 	union
 	utamas
 	vividcolor
+  weareone
 	welcome
+  whitev
 	why
 	zettaibreak
 )
