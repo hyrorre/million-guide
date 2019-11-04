@@ -232,6 +232,21 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "vampiregirl",
+    title: "きゅんっ!ヴァンパイアガール",
+    kana: "きゅんっゔぁんぱいあがーる",
+    musictype: 3,
+    order: 1209,
+    added_on: Date.new(2019, 9, 27),
+    updated_on: Date.new(2019, 9, 27),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
     idstr: "invjus",
     title: "インヴィンシブル・ジャスティス",
     kana: "いんゔぃんしぶるじゃすてぃす",
@@ -937,6 +952,81 @@ Music.create(
     level_mmp: 0
 )
 Music.create(
+    idstr: "runnhi",
+    title: "ランニング・ハイッ",
+    kana: "らんにんぐはいっ",
+    musictype: 0,
+    order: 2046,
+    added_on: Date.new(2019, 8, 4),
+    updated_on: Date.new(2019, 8, 4),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "rabfur",
+    title: "ラビットファー",
+    kana: "らびっとふぁー",
+    musictype: 0,
+    order: 2047,
+    added_on: Date.new(2019, 8, 21),
+    updated_on: Date.new(2019, 8, 21),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 18,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "redworld",
+    title: "赤い世界が消える頃",
+    kana: "あかいせかいがきえるころ",
+    musictype: 1,
+    order: 2048,
+    added_on: Date.new(2019, 9, 3),
+    updated_on: Date.new(2019, 9, 3),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "girlmeets",
+    title: "Girl meets Wonder",
+    kana: "Girl meets Wonder",
+    musictype: 2,
+    order: 2049,
+    added_on: Date.new(2019, 9, 19),
+    updated_on: Date.new(2019, 9, 19),
+    level_2m: 4,
+    level_2mp: 10,
+    level_4m: 7,
+    level_6m: 11,
+    level_mm: 16,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "gf",
+    title: "G♡F",
+    kana: "GF",
+    musictype: 2,
+    order: 2050,
+    added_on: Date.new(2019, 10, 3),
+    updated_on: Date.new(2019, 10, 3),
+    level_2m: 5,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
     idstr: "sutekise",
     title: "素敵なキセキ",
     kana: "すてきなきせき",
@@ -1548,6 +1638,96 @@ Music.create(
     level_2mp: 10,
     level_4m: 7,
     level_6m: 11,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "mariheart",
+    title: "マリオネットの心",
+    kana: "まりおねっとのこころ",
+    musictype: 2,
+    order: 3042,
+    added_on: Date.new(2019, 7, 30),
+    updated_on: Date.new(2019, 7, 30),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "sakashima",
+    title: "さかしまの言葉",
+    kana: "さかしまのことば",
+    musictype: 1,
+    order: 3043,
+    added_on: Date.new(2019, 8, 14),
+    updated_on: Date.new(2019, 8, 14),
+    level_2m: 4,
+    level_2mp: 9,
+    level_4m: 6,
+    level_6m: 10,
+    level_mm: 14,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "bemyself",
+    title: "Just be myself!!",
+    kana: "Just be myself",
+    musictype: 1,
+    order: 3044,
+    added_on: Date.new(2019, 8, 30),
+    updated_on: Date.new(2019, 8, 30),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "miraihikou",
+    title: "未来飛行",
+    kana: "みらいひこう",
+    musictype: 0,
+    order: 3045,
+    added_on: Date.new(2019, 9, 12),
+    updated_on: Date.new(2019, 9, 12),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 8,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "kirameki",
+    title: "キラメキラリ",
+    kana: "きらめきらり",
+    musictype: 2,
+    order: 3046,
+    added_on: Date.new(2019, 9, 28),
+    updated_on: Date.new(2019, 9, 28),
+    level_2m: 4,
+    level_2mp: 11,
+    level_4m: 7,
+    level_6m: 12,
+    level_mm: 17,
+    level_mmp: 0
+)
+Music.create(
+    idstr: "sjoker",
+    title: "Silent Joker",
+    kana: "Silent Joker",
+    musictype: 1,
+    order: 3047,
+    added_on: Date.new(2019, 10, 12),
+    updated_on: Date.new(2019, 10, 12),
+    level_2m: 4,
+    level_2mp: 12,
+    level_4m: 8,
+    level_6m: 13,
     level_mm: 17,
     level_mmp: 0
 )

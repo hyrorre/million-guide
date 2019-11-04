@@ -37,6 +37,7 @@ ids = %w(
 	anpara
 	asacre
 	astation
+  bemyself
 	bharmony
 	bibabo
 	blmstar
@@ -60,6 +61,8 @@ ids = %w(
   frlove
 	fwind
   getcre
+  gf
+  girlmeets
 	goodsleep
 	grosto
   hanasb
@@ -82,6 +85,7 @@ ids = %w(
 	jparty
   jusvoi
 	kimihanabi
+  kirameki
 	koimask
 	kokokae
 	kokoroex
@@ -93,8 +97,10 @@ ids = %w(
 	locomo
 	machipri
   mariat
+	mariheart
 	meltyf
 	merry
+  miraihikou
   mjourney
   music
 	neversleep
@@ -112,11 +118,16 @@ ids = %w(
 	raisef
 	ready
   rebell
+  redworld
 	rolltri
+	rabfur
+  runnhi
 	ruriiro
   ryuseg
+  sakashima
 	senti
 	siscafe
+  sjoker
 	smileichi
 	sss
 	stamelo
@@ -130,6 +141,7 @@ ids = %w(
 	unibeat
 	union
 	utamas
+  vampiregirl
 	vividcolor
   weareone
 	welcome
