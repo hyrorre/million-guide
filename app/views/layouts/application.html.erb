@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112158135-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-112158135-1');
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+	<%= display_meta_tags(default_meta_tags) %>
+	<%= csrf_meta_tags %>
+	
+	<%= stylesheet_link_tag 'application', media: 'all' %>
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-1154104535471881",
+			enable_page_level_ads: true
+		});
+	</script>
+</head>
+
+<body data-controller="<%= controller_name %>" data-action="<%= action_name %>">
+	<div id="pagetop"></div>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	<%= yield %>
+	<div class="floating_div">
+		<a href="#pagetop"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a><br>
+		<a href="#pagebottom"><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+	</div>
+	<div id="pagebottom"></div>
+
+	<script type="text/javascript" src="https://js1.nend.net/js/nendAdLoader.js"></script>
+	<%= javascript_include_tag "application" %>
+</body>
+</html>

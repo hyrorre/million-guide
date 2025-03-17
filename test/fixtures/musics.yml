@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idstr: MyString
+  title: MyString
+  kana: MyString
+  type: 
+  category: 
+  added_on: 2017-11-01
+  updated_on: 2017-11-01
+  level_2m: 
+  level_2mp: 
+  level_4m: 
+  level_6m: 
+  level_mm: 
+  level_mmp: 
+
+two:
+  idstr: MyString
+  title: MyString
+  kana: MyString
+  type: 
+  category: 
+  added_on: 2017-11-01
+  updated_on: 2017-11-01
+  level_2m: 
+  level_2mp: 
+  level_4m: 
+  level_6m: 
+  level_mm: 
+  level_mmp: 

@@ -1,0 +1,66 @@
+<meta name="viewport" content="width=480">
+<% title_diff = "#{@music.title} [#{@difficulty_str[@difficulty.to_i]}]" %>
+<% set_meta_tags title: title_diff, og: {title: title_diff + " | ミリシタ譜面ビューア", image: image_url("jackets/#{@music.idstr}.jpg")} %>
+<div class="musics_show_container">
+	<h1>ミリシタ譜面ビューア</h1>
+	<p><%= link_to "Home", musics_index_path %> > <%= title_diff %></p>
+	<ul id="musiclist" class="list"><li>
+		<%= image_tag("jackets/#{@music.idstr}.jpg", :class => "jacket") %>
+		<h3 class="title"><%= @music.title %></h3>
+		<%= image_tag("musictypes/#{@music.musictype}.png", :class => "musictypeimage") %>
+		<table class="scoretable">
+			<tr>
+				<% for i in 0..4 do %>
+					<th><%= @difficulty_str[i] %></th>
+				<% end %>
+			</tr>
+			<tr>
+				<% for i in 0..4 do %>
+					<td class="diff<%= i %> bms_exist_<%= @difficulty.to_i != i %>">
+						<%= link_to @levels[i], musics_show_path(@music.idstr, i) %>
+					</td>
+					<p class="diffnum diffnum<%= i %>"><%= @levels[i] %></p>
+				<% end %>
+			</tr>
+		</table>
+		<p class="added_on"><%= @music.added_on %></p>
+	</li></ul>
+	<div class="ad-rectangle">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- million-rectangle -->
+		<ins class="adsbygoogle"
+			style="display:inline-block;width:336px;height:280px"
+			data-ad-client="ca-pub-1154104535471881"
+			data-ad-slot="1424163788"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	</div>
+	<details>
+		<summary>設定</summary>
+		<h5>
+			譜面の幅
+			<select name="Width" id="width_select" title="Width">
+				<% for i in 5..20 do %>
+					<option value="<%= i * 10 %>" class="opval<%= i * 10 %>" <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+				<% end %>
+			</select>
+		</h5>
+		<h5>
+			譜面の高さ
+			<select name="Height" id="height_select" title="Height">
+				<% for i in 5..20 do %>
+					<option value="<%= i * 10 %>" class="opval<%= i * 10 %>" <%= (i == 10 ? "selected" : "") %>><%= i * 10 %>%</option>
+				<% end %>
+			</select>
+		</h5>
+		<p>仕様上、高さを大きくしすぎると譜面の一部が消えます。適度な値で調整してください。</p>
+	</details>
+	<canvas id="cv0" width="440" height="1800"></canvas>
+	<canvas id="cv1" width="440" height="1800"></canvas>
+	<div style="display:none;">
+		<div id="difficulty"><%= @difficulty %></div>
+		<div id="format"><%= @format %></div>
+		<div id="score_str"><%= @score_str %></div>
+	</div>
+</div>
